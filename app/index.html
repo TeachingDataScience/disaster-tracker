@@ -12,6 +12,7 @@
 <BODY>
 
     <!-- this is a placeholder for an interactive map -->
+    <div id="cover">&nbsp;</div>
 
     <div data-magellan-expedition="fixed">
         <dl class="sub-nav">
@@ -21,16 +22,98 @@
         </dl>
     </div>
 
+    <section class="row">
+    <div class="small-12 column"></div>
 
-    <a name="reports"></a>
-    <h3 data-magellan-destination="reports">Reports</h3>
 
 
-    <a name="past"></a>
-    <h3 data-magellan-destination="past">The past</h3>
 
-    <a name="profile"></a>
-    <h3 data-magellan-destination="profile">The Profiles</h3>
+    <!-- top-line stories, about, and top-line data -->
+    <div class="row">
+        <div class="medium-8 column">
+
+            <a name="reports"></a>
+            <h3 data-magellan-destination="reports">Reports From Relief Web</h3>
+
+            <div class="row">
+                <div class="medium-8 column">
+                    <label>Search for a report
+                        <input type="text" placeholder="e.g. 'tacloban infrastructure damage'" />
+                    </label>
+                </div>
+
+                <div class="medium-4 column">
+                    <label>Sort by
+                        <select>
+                            <option value="latest">Most recent</option>
+                            <option value="earliest">Least recent</option>
+                            <!-- TODO more select values -->
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="medium-4 column">
+            <h4>About this project</h4>
+
+            <h4>Data at a glance</h4>
+        </div>
+    </div>
+
+    <!-- twitter feeds -->
+    <div class="row">
+
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="medium-11 medium-centered column">
+
+            <div class="medium-8 column">
+                <label>Search tweets
+                    <input type="text" placeholder="e.g. '#haiyan" />
+                </label>
+            </div>
+
+            <div class="medium-4 column">
+                <label>Sort by
+                    <select>
+                        <option value="latest">Most recent</option>
+                        <option value="earliest">Least recent</option>
+                    </select>
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- previous disasters and map -->
+    <div class="row">
+        <div class="column">
+            <a name="past"></a>
+            <h3 data-magellan-destination="past">The past</h3>
+        </div>
+    </div>
+
+    <!-- country profile & demographic information -->
+    <div class="row">
+        <div class="column">
+            <a name="profile"></a>
+            <h3 data-magellan-destination="profile">The Profiles</h3>
+        </div>
+
+        <div class="medium-4 column">
+            <h4>Related Relief Web Stories</h4>
+        </div>
+
+        <div class="medium-8 column">
+            <h4>Phillipines Demographics</h4>
+        </div>
+    </div>
 
 
     <script type="text/javascript" src="/lib/jquery/jquery-1.11.0.min.js"></script>
