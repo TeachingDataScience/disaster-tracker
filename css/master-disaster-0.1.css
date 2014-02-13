@@ -8,7 +8,7 @@ p {
   font-family: 'Lato', "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
 #cover {
-  background: url(/img/haiyan_cover.png) center center no-repeat;
+  background: url(../img/haiyan_cover.png) center center no-repeat;
   background-size: 100% auto;
   padding-bottom: 700px;
 }
