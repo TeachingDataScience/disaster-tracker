@@ -5,7 +5,7 @@ var app = app || {};
     'use strict';
 
     var params = {
-        limit: 20,
+        limit: 30,
         fields: {
             include: {
                 0: 'body-html',
@@ -45,12 +45,14 @@ var app = app || {};
             //this.listenTo(app.stories, 'all', this.render);
 
             var query = {
-                value: 'haiyan phillipines hurricane',
+                value: 'haiyan',
                 fields: {
                     0: 'title'
                 },
                 operator: 'OR'
             }
+
+            new app.PaginationView//({ el: '#report-pagination' });
 
             app.stories.fetch({
                 reset: true,
@@ -68,15 +70,40 @@ var app = app || {};
 
         addOne: function(story, index) {
             var disaster = story.attributes.disaster;
+
             if (disaster && disaster.length) {
 
-                console.log(story.attributes.disaster[0].name);
-                console.log(story.attributes.disaster[0].id);
             }
 
             var view = new app.ReportView({ model: story });
             this.$reports.append(view.render().el);
         },
+
+    });
+
+    app.PaginationView = Backbone.View.extend({
+        tagName: 'ul',
+
+        template: _.template($('#pagination-template').html()),
+
+        events: {
+
+        },
+
+        initialize: function() {
+            this.perPage = 5;
+
+            this.listenTo(app.stories, 'reset', this.addAll);
+        },
+
+        addAll: function() {
+
+        },
+
+        render: function() {
+        }
+
+
 
     });
 

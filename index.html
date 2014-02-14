@@ -52,6 +52,9 @@
                     </div>
                 </div>
 
+                <div id="report-pagination">
+                </div>
+
                 <div id="report-list">
                 </div>
 
@@ -129,8 +132,14 @@
         <script type="text/template" id="report-template">
             <h5 class="source"><%- source[0].name %></h5>
             <h4 class="hed"><%- title %></h4>
-            <p><%= lead %></p>
+            <p class="toggle"><%= lead %></p>
+            <hr />
         </script>
+
+        <script type="text/template" id="pagination-template">
+            <li class="<%- cls ->"><a href="#"><%- num -></a></li>
+        </script>
+
     </div>
 
     <script type="text/javascript" src="lib/jquery/jquery-1.11.0.min.js"></script>
