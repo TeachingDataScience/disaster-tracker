@@ -1,5 +1,9 @@
 var app = app || {};
 
+String.prototype.trunc = String.prototype.trunc || function(n) {
+    return this.length > n ? this.substr(0, this.substr(0, n - 1).lastIndexOf(' ')) + '...' : this;
+};
+
 (function() {
     'use strict';
 
@@ -16,7 +20,14 @@ var app = app || {};
                         {};
 
             return _.map(models, function(model) {
-                return model.fields;
+
+                // here is where you do stuff with models
+                // alright
+
+                var lead = model.fields['body-html'] ?
+                        model.fields['body-html'].trunc(300) : 'No description available';
+
+                return _.extend({}, model.fields, {lead: lead});
             });
         },
 

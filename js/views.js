@@ -8,7 +8,7 @@ var app = app || {};
         limit: 20,
         fields: {
             include: {
-                0: 'body',
+                0: 'body-html',
                 1: 'country',
                 2: 'date',
                 3: 'disaster',
@@ -20,7 +20,8 @@ var app = app || {};
                 9: 'title',
                 10: 'url',
                 11: 'vulnerable_groups',
-                12: 'headline'
+                12: 'headline',
+                13: 'language',
             }
         }
     };
@@ -44,10 +45,11 @@ var app = app || {};
             //this.listenTo(app.stories, 'all', this.render);
 
             var query = {
-                value: 'haiyan',
+                value: 'haiyan phillipines hurricane',
                 fields: {
                     0: 'title'
-                }
+                },
+                operator: 'OR'
             }
 
             app.stories.fetch({
@@ -65,6 +67,13 @@ var app = app || {};
         },
 
         addOne: function(story, index) {
+            var disaster = story.attributes.disaster;
+            if (disaster && disaster.length) {
+
+                console.log(story.attributes.disaster[0].name);
+                console.log(story.attributes.disaster[0].id);
+            }
+
             var view = new app.ReportView({ model: story });
             this.$reports.append(view.render().el);
         },
@@ -84,6 +93,7 @@ var app = app || {};
 
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
+            this.$el.addClass('report');
             return this;
         }
 

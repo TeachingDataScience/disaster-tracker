@@ -17,7 +17,8 @@ var app = app || {};
             title: '',
             url: '',
             vulnerable_groups: [],
-            headline: []
+            headline: [],
+            language: []
         },
     });
 
