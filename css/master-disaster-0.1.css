@@ -16,8 +16,17 @@ h5 {
   font-size: 0.777em;
   line-height: 1em;
 }
+.relative {
+  position: relative;
+}
+.mid-space {
+  margin: 2em 0 2.225em;
+}
+.deep-space {
+  margin: 3em 0 3.445em;
+}
 .report {
-  margin: 2em 0 4em;
+  margin: 12px 0 20px;
 }
 .source {
   text-transform: uppercase;
@@ -26,6 +35,31 @@ h5 {
 }
 .hed {
   margin: 0 0 0.965em;
+}
+ul.pagination li.current a:hover,
+ul.pagination li.current a {
+  background-color: #008cba;
+  -webkit-transition: background-color 400ms ease-in-out;
+  -moz-transition: background-color 400ms ease-in-out;
+  -o-transition: background-color 400ms ease-in-out;
+  -ms-transition: background-color 400ms ease-in-out;
+  transition: background-color 400ms ease-in-out;
+}
+.slider {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  -ms-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+.slider.hidden {
+  position: absolute;
+  top: -80px;
+  width: 100%;
+  opacity: 0;
 }
 #cover {
   background: url(../img/haiyan_cover.png) center center no-repeat;

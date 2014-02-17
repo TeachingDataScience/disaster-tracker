@@ -52,8 +52,6 @@ var app = app || {};
                 operator: 'OR'
             }
 
-            new app.PaginationView//({ el: '#report-pagination' });
-
             app.stories.fetch({
                 reset: true,
                 data: _.extend({}, params, { query: query })
@@ -72,7 +70,7 @@ var app = app || {};
             var disaster = story.attributes.disaster;
 
             if (disaster && disaster.length) {
-
+                // figure out if it's the same disaster we're tracking here
             }
 
             var view = new app.ReportView({ model: story });
@@ -81,28 +79,109 @@ var app = app || {};
 
     });
 
-    app.PaginationView = Backbone.View.extend({
-        tagName: 'ul',
+    app.ReportSearch = Backbone.View.extend({
+        el: '#report-search',
 
-        template: _.template($('#pagination-template').html()),
+        text: {
+            hide: 'Hide search options &#x25B2;',
+            show: 'Show search options &#x25BC;'
+        },
 
         events: {
-
+            'click #expand-search': 'toggleSearch',
         },
 
         initialize: function() {
-            this.perPage = 5;
-
-            this.listenTo(app.stories, 'reset', this.addAll);
+            this.$below = this.$('#search-options');
+            this.$toggle = this.$('#expand-search');
+            this.toggled = false;
         },
 
-        addAll: function() {
+        toggleSearch: function() {
+            // TODO since we're using pure css, problem with transparent element covering up stuff below.
+            // implement a JS solution or a better CSS solution.
+            this.toggled = !this.toggled;
+            this.$below.toggleClass('hidden');
 
+            var toggleText = this.toggled ?
+                this.text.hide : this.text.show;
+
+            this.$toggle.html(toggleText);
+
+            return false;
+        },
+
+    });
+
+    app.PaginatedView = Backbone.View.extend({
+
+        el: '#report-pagination',
+        template: _.template($('#pagination-template').html()),
+
+        name: 'pager',
+
+        events: {
+            'click .prev': 'previous',
+            'click .next': 'next',
+            'click .pagination-item': 'jump'
+        },
+
+        initialize: function() {
+            this.$after = this.$('.prev');
+
+            this.listenTo(app.stories, 'reset', this.render);
+            this.listenTo(app.stories, 'reflow', this.reflow);
         },
 
         render: function() {
-        }
 
+            this.pageInfo = app.stories.pageInfo();
+
+            var fragment = new Array(this.pageInfo.pages),
+                i = 0,
+                ii = fragment.length;
+
+            for(; i < ii; ++i) {
+                fragment[i] = this.renderOne(i);
+            }
+
+            this.$after.after($(fragment.join('')));
+            this.refresh();
+        },
+
+        renderOne: function(index) {
+            return this.template({num: index, id: this.name.concat(index)});
+        },
+
+        previous: function() {
+            app.stories.previousPage();
+            return false;
+        },
+
+        next: function() {
+            app.stories.nextPage();
+            return false;
+        },
+
+        jump: function(event) {
+            var target = event.currentTarget.id.slice(this.name.length);
+
+            if (this.pageInfo.page !== target) {
+                app.stories.jump(event.currentTarget.id.slice(this.name.length));
+            }
+
+            return false;
+        },
+
+        reflow: function() {
+            this.pageInfo = app.stories.pageInfo();
+            this.refresh();
+        },
+
+        refresh: function() {
+            this.$('.current').removeClass('current');
+            this.$('.pagination-item').eq(this.pageInfo.page).addClass('current');
+        }
 
 
     });
@@ -117,6 +196,7 @@ var app = app || {};
 
         initialize: function() {
         },
+
 
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));

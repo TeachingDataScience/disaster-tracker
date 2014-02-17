@@ -34,28 +34,70 @@
                 <a name="reports"></a>
                 <h2 data-magellan-destination="reports">Reports From Relief Web</h2>
 
-                <div class="row">
-                    <div class="medium-8 column">
-                        <label>Search for a report
-                            <input type="text" placeholder="e.g. 'tacloban infrastructure damage'" />
-                        </label>
+                <form id="report-search">
+                    <div class="row">
+
+                        <div class="medium-9 column">
+
+                            <div class="row collapse">
+                                <div class="small-10 column">
+                                    <input type="text" placeholder="e.g. 'tacloban infrastructure damage'" />
+                                </div>
+                                <div class="small-2 column">
+                                    <input type="submit" value="Search" class="button postfix" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="medium-3 column">
+                            <button id="expand-search" class="button postfix secondary">Show search options &#x25BC;</button>
+                        </div>
+
                     </div>
 
-                    <div class="medium-4 column">
-                        <label>Sort by
-                            <select>
-                                <option value="latest">Most recent</option>
-                                <option value="earliest">Least recent</option>
-                                <!-- TODO more select values -->
-                            </select>
-                        </label>
+                    <div class="relative">
+                        <div id="search-options" class="slider hidden">
+
+                            <div class="row">
+
+                                <div class="medium-3 column">
+                                    <label># of results (1,000 max)
+                                        <input type="text" placeholder="40" />
+                                    </label>
+                                </div>
+
+                                <div class="medium-2 column">
+                                    <label>Start date
+                                        <input type="text" placeholder="2/3/1980" />
+                                    </label>
+                                </div>
+
+
+                                <div class="medium-2 column">
+                                    <label>End date
+                                        <input type="text" placeholder="2/3/1980" />
+                                    </label>
+                                </div>
+
+                                <div class="medium-5 column">
+                                    <label>Exclude these terms
+                                        <input type="text" placeholder="" />
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
-                </div>
 
-                <div id="report-pagination">
-                </div>
+                </form>
 
-                <div id="report-list">
+                <ul id="report-pagination" class="pagination">
+                    <li class="arrow prev"><a href="#">&laquo;</a></li>
+                    <li class="arrow next"><a href="#">&raquo;</a></li>
+                </ul>
+
+                <div id="report-list" class="mid-space">
                 </div>
 
             </div>
@@ -126,6 +168,7 @@
 
 
     <div id="templates">
+
         <script type="text/template" id="report-template">
             <h5 class="source"><%- source[0].name %></h5>
             <h4 class="hed"><%- title %></h4>
@@ -134,7 +177,11 @@
         </script>
 
         <script type="text/template" id="pagination-template">
-            <li class="<%- cls ->"><a href="#"><%- num -></a></li>
+            <li id="<%- id %>" class="pagination-item">
+                <a href="#">
+                    <%- num %>
+                </a>
+            </li>
         </script>
 
     </div>

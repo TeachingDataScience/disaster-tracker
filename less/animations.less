@@ -1,0 +1,37 @@
+
+.transition(@prop, @dur) {
+    -webkit-transition: @prop @dur;
+    -moz-transition: @prop @dur;
+    -o-transition: @prop @dur;
+    -ms-transition: @prop @dur;
+    transition: @prop @dur;
+}
+
+.transition-with-ease(@prop, @dur, @ease) {
+    -webkit-transition: @prop @dur @ease;
+    -moz-transition: @prop @dur @ease;
+    -o-transition: @prop @dur @ease;
+    -ms-transition: @prop @dur @ease;
+    transition: @prop @dur @ease;
+}
+
+ul.pagination li.current a:hover,
+ul.pagination li.current a {
+    background-color: #008cba;
+    .transition-with-ease(background-color, 400ms, ease-in-out);
+}
+
+.slider {
+    top: 0;
+    left: 0;
+    opacity: 1;
+
+    .transition-with-ease(all, 400ms, ease-in-out);
+}
+
+.slider.hidden {
+    position: absolute;
+    top: -80px;
+    width: 100%;
+    opacity: 0;
+}
