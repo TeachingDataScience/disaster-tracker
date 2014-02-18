@@ -15,6 +15,7 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         initialize: function() {
             this.page = 0;
             typeof(this.perPage) != 'undefined' || (this.perPage = 5);
+
         },
 
         parse: function(resp) {

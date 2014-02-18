@@ -4,33 +4,61 @@ var app = app || {};
 
     'use strict';
 
-    var params = {
-        limit: 30,
-        fields: {
-            include: {
-                0: 'body-html',
-                1: 'country',
-                2: 'date',
-                3: 'disaster',
-                4: 'file',
-                5: 'headline',
-                6: 'ocha_product',
-                7: 'origin',
-                8: 'source',
-                9: 'title',
-                10: 'url',
-                11: 'vulnerable_groups',
-                12: 'headline',
-                13: 'language',
-            }
+    app.MapView = Backbone.View.extend({
+        el: '#app-map',
+
+        events: {},
+
+        initialize: function() {
+            var map = L.mapbox.map('app-map', 'rweb.hacei9mm');
+            var onload = $.proxy(this.onload, this);
+
+            window.setTimeout(onload, 800);
+        },
+
+        onload: function() {
+            this.show();
+            app.events.trigger('map:loaded');
+        },
+
+        show: function() {
+            this.$el.addClass('show');
+        },
+
+        fade: function() {
+            this.$el.removeClass('show');
         }
-    };
+
+
+    });
 
     app.AppView = Backbone.View.extend({
 
         el: '#disaster-app',
 
         events: {
+        },
+
+        params: {
+            limit: 30,
+            fields: {
+                include: {
+                    0: 'body-html',
+                    1: 'country',
+                    2: 'date',
+                    3: 'disaster',
+                    4: 'file',
+                    5: 'headline',
+                    6: 'ocha_product',
+                    7: 'origin',
+                    8: 'source',
+                    9: 'title',
+                    10: 'url',
+                    11: 'vulnerable_groups',
+                    12: 'headline',
+                    13: 'language',
+                }
+            }
         },
 
 
@@ -54,7 +82,7 @@ var app = app || {};
 
             app.stories.fetch({
                 reset: true,
-                data: _.extend({}, params, { query: query })
+                data: _.extend({}, this.params, { query: query })
             });
         },
 
@@ -95,6 +123,20 @@ var app = app || {};
             this.$below = this.$('#search-options');
             this.$toggle = this.$('#expand-search');
             this.toggled = false;
+
+            // call datepicker on our input fields
+            this.$dates = {
+                start: this.$('#datepicker-start'),
+                end: this.$('#datepicker-end')
+            };
+
+            // TODO deal with default
+            _.each(this.$dates, function($date) {
+                $date.fdatepicker({
+                    format: 'mm-dd-yyyy'
+                });
+            });
+
         },
 
         toggleSearch: function() {

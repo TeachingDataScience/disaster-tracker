@@ -2,7 +2,10 @@ var app = app || {};
 
 $(function() {
     'use strict';
-    new app.AppView();
-    new app.PaginatedView();
-    new app.ReportSearch();
+
+    var views = ['MapView', 'AppView', 'PaginatedView', 'ReportSearch'];
+    _.each(views, function(view) {
+        new app[view]();
+    });
+
 });
