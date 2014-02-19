@@ -7,6 +7,8 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 (function() {
     'use strict';
 
+    var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+
     var Stories = Backbone.Collection.extend({
 
         model: app.story,
@@ -27,14 +29,32 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
             this.total = models.length;
 
             var paginated = models.slice(this.page * this.perPage, this.perPage);
-            return _.map(paginated, this.truncate);
+
+            return _.map(paginated, function(model) {
+
+                var fields = model.fields,
+
+                    // truncate the body to 300 characters
+                    html = fields['body-html'],
+                    lead = html ? html.trunc(300) : 'No description available',
+
+                    // get a date string
+                    date = fields.date,
+                    dateline = date && date.created ? this.getDate(date.created) : '';
+
+                    return _.extend({}, fields, {lead: lead, dateline: dateline});
+            }, this);
         },
 
-        // trims leading paragraph to 300 characters and returns an object with that property
-        truncate: function(model) {
-            var lead = model.fields['body-html'] ?
-                    model.fields['body-html'].trunc(300) : 'No description available';
-            return _.extend({}, model.fields, {lead: lead});
+        getDate: function(date) {
+            var dateObj;
+            try {
+                dateObj = new Date(date);
+            }
+            catch(e) {
+                return '';
+            }
+            return [dateObj.getDate(), months[dateObj.getMonth()] + ',', dateObj.getFullYear()].join(' ');
         },
 
         // returns an object that describes the state of pagination

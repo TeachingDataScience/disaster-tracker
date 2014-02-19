@@ -4,6 +4,16 @@ var app = app || {};
 
     'use strict';
 
+    app.MainStoryView = Backbone.View.extend({
+        el: '#main-story',
+        initialize: function() {
+            app.events.on('map:loaded', this.show, this);
+        },
+        show: function() {
+            this.$el.addClass('slide-in');
+        }
+    });
+
     app.MapView = Backbone.View.extend({
         el: '#app-map',
 

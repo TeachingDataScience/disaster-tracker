@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="lib/foundation/css/foundation.css" />
     <!-- datepicker module -->
     <link rel="stylesheet" type="text/css" href="lib/datepicker/css/foundation-datepicker.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
     <!-- mapbox styles -->
     <link rel="stylesheet" type="text/css" href="//api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css" />
 
@@ -21,13 +23,17 @@
 </HEAD>
 <BODY>
 
-    <div id="disaster-app">
+    <div id="disaster-app" class="tall">
 
-        <!-- not using this cover image anymore -->
-        <!-- div id="cover">&nbsp;</div -->
-
-        <!-- this is a placeholder for an interactive map -->
-        <div id="app-map" class="map">&nbsp;</div>
+        <div class="relative tall">
+            <div id="app-map" class="map">&nbsp;</div>
+            <div id="main-story" class="overlay finger">
+                <h6 class="source">Report From Christian Blind Mission</h6>
+                <h1>Hurricane Haiyan</h1>
+                <p class="dateline">19 November, 2013</p>
+                <p><strong>Working to ensure persons with disabilities are not forgotten</strong></p>
+                <p>One of the strongest typhoons ever to hit land has slammed the Philippines, forcing millions to take shelter. Super Typhoon Haiyan (locally named 'Yolanda') made its first landfall on 8 November, with... <a href="#">Read full story <i class="fa fa-external-link"></i></a></p> </div>
+        </div>
 
         <div data-magellan-expedition="fixed">
             <dl class="sub-nav">
@@ -43,6 +49,7 @@
 
                 <a name="reports"></a>
                 <h2 data-magellan-destination="reports">Reports From Relief Web</h2>
+                <h2><i class="fa fa-external-link"></i></h2>
 
                 <form id="report-search">
                     <div class="row">
@@ -181,8 +188,9 @@
     <div id="templates">
 
         <script type="text/template" id="report-template">
-            <h5 class="source"><%- source[0].name %></h5>
-            <h4 class="hed"><%- title %></h4>
+            <h6 class="source"><%- source[0].name %></h6>
+            <h3 class="hed"><%- title %></h3>
+            <p class="dateline"><%- dateline %></p>
             <p class="toggle"><%= lead %></p>
             <hr />
         </script>
