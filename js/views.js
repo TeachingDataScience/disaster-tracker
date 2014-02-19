@@ -20,7 +20,9 @@ var app = app || {};
         events: {},
 
         initialize: function() {
-            var map = L.mapbox.map('app-map', 'rweb.hacei9mm');
+            var map = L.mapbox.map('app-map', 'rweb.hacei9mm',{
+                scrollWheelZoom:false
+            });
             var onload = $.proxy(this.onload, this);
 
             window.setTimeout(onload, 800);
