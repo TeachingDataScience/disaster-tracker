@@ -49,9 +49,43 @@ var app = app || {};
 
         fade: function() {
             this.$el.removeClass('show');
+        },
+
+        addMarker: function(){
+            var view = this;
+            var featureCollection = app.markers.models[0].attributes;
+            _.each(featureCollection.features,function(f){
+                f.properties['marker-size'] = 'small';
+                f.properties['marker-color'] = '#D75B6C';
+                f.properties.popup = "<div>"+
+                                        "<h6>Name: "+ f.properties.Name + "</h6><table>"+
+                                        "<tr><td>Affected Population:</td><td>"+ f.properties.Affected + "</td></tr><tr>"+
+                                        "<tr><td>Damage (millions USD):</td><td>"+ f.properties["Damage (million USD)"]+ "</td></tr><tr>"+
+                                     "</table></div>"
+            });
+
+            L.geoJson(featureCollection, {
+                pointToLayer: L.mapbox.marker.style,
+                onEachFeature: function (feature, layer) {
+
+                    var brief = L.popup({
+                        closeButton:false,
+                        offset: new L.Point(0,-20)
+                    }).setContent(feature.properties.popup);
+
+                    layer.on('mouseover',function(){
+                        brief.setLatLng(this.getLatLng());
+                        view.map.openPopup(brief);
+                    }).on('mouseout',function(){
+                        view.map.closePopup(brief);
+                    }).on('click',function(){
+                        return
+                    })
+
+                }
+            }).addTo(this.layer);
+            this.map.addLayer(this.layer);
         }
-
-
     });
 
     app.AppView = Backbone.View.extend({
