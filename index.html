@@ -1,4 +1,4 @@
-<!dOCTYPE html>
+<!DOCTYPE html>
 <HTML>
 <HEAD>
 
@@ -14,129 +14,100 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
     <!-- mapbox styles -->
     <link rel="stylesheet" type="text/css" href="//api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css" />
-
     <!-- developer css -->
-    <link rel="stylesheet" type="text/css" href="css/master-disaster-0.1.css" />
+    <!--link rel="stylesheet" type="text/css" href="css/master-disaster-0.1.css" /-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- call modernizr -->
     <script src="lib/modernizr/modernizr.js"></script>
 </HEAD>
 <BODY>
-
     <div id="disaster-app" class="tall">
-
-        <div class="relative tall">
-            <div id="app-map" class="map">&nbsp;</div>
-            <div id="main-story" class="overlay finger">
-                <h6 class="source">Report From Christian Blind Mission</h6>
-                <h1>Hurricane Haiyan</h1>
-                <p class="dateline">19 November, 2013</p>
-                <p><strong>Working to ensure persons with disabilities are not forgotten</strong></p>
-                <p>One of the strongest typhoons ever to hit land has slammed the Philippines, forcing millions to take shelter. Super Typhoon Haiyan (locally named 'Yolanda') made its first landfall on 8 November, with... <a href="#">Read full story <i class="fa fa-external-link"></i></a></p> </div>
-        </div>
-
+        <!-- subnav -->
         <div data-magellan-expedition="fixed">
             <dl class="sub-nav">
                 <dd data-magellan-arrival="reports"><a href="#reports">Current Reports</a></dd>
+                <dd data-magellan-arrival="twitter"><a href="#twitter">Ongoing Tweets</a></dd>
                 <dd data-magellan-arrival="past"><a href="#past">Past Disasters</a></dd>
                 <dd data-magellan-arrival="profile"><a href="#profile">Country Profile</a></dd>
             </dl>
         </div>
-
-        <!-- top-line stories, about, and top-line data -->
-        <div class="row">
-            <div class="medium-12 column">
-
-                <a name="reports"></a>
-                <h2 data-magellan-destination="reports">Reports From Relief Web</h2>
-
+        <!-- fisrt section -->
+        <div class="tall" data-magellan-destination="reports">
+            <a name="reports"></a>
+            <div id="app-map" class="map">&nbsp;</div>
+<!--             <div id="main-story" class="overlay finger">
+                <h6 class="source">Christian Blind Mission</h6>
+                <h1>Hurricane Haiyan</h1>
+                <p class="dateline">19 November, 2013</p>
+                <p><strong>Working to ensure persons with disabilities are not forgotten</strong></p>
+                <p>One of the strongest typhoons ever to hit land has slammed the Philippines, forcing millions to take shelter. Super Typhoon Haiyan (locally named 'Yolanda') made its first landfall on 8 November, with... <a href="#">Read full story <i class="fa fa-external-link"></i></a></p>
+            </div> -->
+            <div class='reports'>
+                <!-- begin search -->
                 <form id="report-search">
                     <div class="row">
-
                         <div class="medium-9 column">
-
                             <div class="row collapse">
                                 <div class="small-10 column">
-                                    <input type="text" placeholder="e.g. 'tacloban infrastructure damage'" />
+                                    <input type="text" placeholder="Search in current reports: eg. 'infrastructure damage'" />
                                 </div>
                                 <div class="small-2 column">
                                     <input type="submit" value="Search" class="button postfix" />
                                 </div>
                             </div>
                         </div>
-
                         <div class="medium-3 column">
-                            <button id="expand-search" class="button postfix secondary">Show search options &#x25BC;</button>
+                            <button id="expand-search" class="button postfix secondary">Show search</button>
                         </div>
-
                     </div>
-
                     <div class="relative">
                         <div id="search-options" class="slider hidden">
-
                             <div class="row">
-
                                 <div class="medium-3 column">
                                     <label># of results (1,000 max)
                                         <input type="text" placeholder="40" />
                                     </label>
                                 </div>
-
                                 <div class="medium-2 column">
                                     <label>Start date
                                         <input id="datepicker-start" type="text" placeholder="2-3-1980" />
                                     </label>
                                 </div>
-
-
                                 <div class="medium-2 column">
                                     <label>End date
                                         <input id="datepicker-end" type="text" placeholder="2-3-1980" />
                                     </label>
                                 </div>
-
                                 <div class="medium-5 column">
                                     <label>Exclude these terms
                                         <input type="text" placeholder="" />
                                     </label>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
-
                 </form>
-
+                <!-- begin reports -->
+                <div id="report-list" class="row">
+                    <!-- report cards here -->
+                </div>
+                <!-- begin pagination -->
                 <ul id="report-pagination" class="pagination">
                     <li class="arrow prev"><a href="#">&laquo;</a></li>
                     <li class="arrow next"><a href="#">&raquo;</a></li>
                 </ul>
-
-                <div id="report-list" class="mid-space">
-                    <!-- reports get fed here -->
-                </div>
-
             </div>
-
         </div>
 
-        <!-- twitter feeds -->
-        <div class="row">
-
-        </div>
-
-
-
-
-        <div class="row">
-
+        <!--  twitter search -->
+        <div class="row" data-magellan-destination="twitter">
+            <a name='twitter'></a>
             <div class="medium-8 column">
                 <label>Search tweets
                     <input type="text" placeholder="e.g. '#haiyan'" />
                 </label>
             </div>
-
             <div class="medium-4 column">
                 <label>Sort by
                     <select>
@@ -145,9 +116,80 @@
                     </select>
                 </label>
             </div>
-
-            <div class="medium-3 large-2 column tweet">
-                <h4>This is a Tweet</h4>
+        </div>
+        <!-- twitter feeds -->
+        <div class="row tweet">
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
+            </div>
+            <div class='report medium-3 column'>
+                <div class='report-content'>
+                    <h6 class="hed">Tweet</h4>
+                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
+                </div>
             </div>
         </div>
 
@@ -155,7 +197,7 @@
         <div class="row">
             <div class="column">
                 <a name="past"></a>
-                <h2 data-magellan-destination="past">The past</h2>
+                <h2 data-magellan-destination="past">The Past</h2>
             </div>
         </div>
 
@@ -183,15 +225,16 @@
 
     </div>
 
-
+    <!-- templates -->
     <div id="templates">
 
         <script type="text/template" id="report-template">
-            <h6 class="source"><%- source[0].name %></h6>
-            <h3 class="hed"><%- title %></h3>
-            <p class="dateline"><%- dateline %></p>
-            <p class="toggle"><%= lead %></p>
-            <hr />
+            <div class='report-content'>
+                <h6 class="source"><%- source[0].name %></h6>
+                <h6 class="hed"><%- title %></h4>
+                <p class="dateline"><%- dateline %></p>
+                <p class="toggle"><%= lead %></p>
+            </div>
         </script>
 
         <script type="text/template" id="pagination-template">
