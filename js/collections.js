@@ -16,7 +16,7 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
         initialize: function() {
             this.page = 0;
-            typeof(this.perPage) != 'undefined' || (this.perPage = 5);
+            typeof(this.perPage) != 'undefined' || (this.perPage = 4);
 
         },
 
@@ -36,7 +36,7 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
                     // truncate the body to 300 characters
                     html = fields['body-html'],
-                    lead = html ? html.trunc(300) : 'No description available',
+                    lead = html ? html.trunc(180) : 'No description available',
 
                     // get a date string
                     date = fields.date,

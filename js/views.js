@@ -254,7 +254,7 @@ var app = app || {};
 
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
-            this.$el.addClass('report');
+            this.$el.addClass('report medium-6 column');
             return this;
         }
 
