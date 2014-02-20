@@ -1,4 +1,5 @@
 var app = app || {};
+var app = app || {};
 
 String.prototype.trunc = String.prototype.trunc || function(n) {
     return this.length > n ? this.substr(0, this.substr(0, n - 1).lastIndexOf(' ')) + '...' : this;
@@ -17,7 +18,6 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         initialize: function() {
             this.page = 0;
             typeof(this.perPage) != 'undefined' || (this.perPage = 4);
-
         },
 
         parse: function(resp) {
