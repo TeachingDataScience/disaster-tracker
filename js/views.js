@@ -20,16 +20,26 @@ var app = app || {};
         events: {},
 
         initialize: function() {
-            var map = L.mapbox.map('app-map', 'rweb.hacei9mm',{
+            this.listenTo(app.markers, 'reset', this.addMarker);
+
+            app.markers.fetch({
+                reset: true
+            });
+
+            this.map = L.mapbox.map('app-map', 'rweb.hacei9mm',{
+                minZoom:3,
+                maxZoom:8,
                 scrollWheelZoom:false
             });
+            this.layer = new L.MarkerClusterGroup({showCoverageOnHover:false});
+
             var onload = $.proxy(this.onload, this);
 
             window.setTimeout(onload, 800);
         },
 
         onload: function() {
-            this.show();
+            // this.show();
             app.events.trigger('map:loaded');
         },
 

@@ -22,4 +22,5 @@ var app = app || {};
         },
     });
 
+    app.marker = Backbone.Model.extend({});
 })();

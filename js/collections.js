@@ -94,5 +94,13 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
     });
 
+    var Markers = Backbone.Collection.extend({
+        url:'/data/ph-disasters-locations.geojson',
+        parse: function(resp) {
+            return resp
+        }
+    })
+
     app.stories = new Stories();
+    app.markers = new Markers();
 })();
