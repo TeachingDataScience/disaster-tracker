@@ -26,12 +26,11 @@ var app = app || {};
                 reset: true
             });
 
-            this.map = L.mapbox.map('app-map', 'rweb.hacei9mm',{
+            this.map = L.mapbox.map('app-map', 'jue.hb9ikea3',{
                 minZoom:3,
                 maxZoom:8,
                 scrollWheelZoom:false
             });
-            this.layer = new L.MarkerClusterGroup({showCoverageOnHover:false});
 
             var onload = $.proxy(this.onload, this);
 
@@ -53,16 +52,26 @@ var app = app || {};
 
         addMarker: function(){
             var view = this;
-            var featureCollection = app.markers.models[0].attributes;
-            _.each(featureCollection.features,function(f){
+            
+            var featureCollection = app.markers.toJSON();
+
+            _.each(featureCollection,function(f){
                 f.properties['marker-size'] = 'small';
-                f.properties['marker-color'] = '#D75B6C';
-                f.properties.popup = "<div>"+
-                                        "<h6>Name: "+ f.properties.Name + "</h6><table>"+
-                                        "<tr><td>Affected Population:</td><td>"+ f.properties.Affected + "</td></tr><tr>"+
-                                        "<tr><td>Damage (millions USD):</td><td>"+ f.properties["Damage (million USD)"]+ "</td></tr><tr>"+
-                                     "</table></div>"
+                f.properties['marker-color'] = '#FFF';
+                f.properties.popup = view.template(f);
             });
+
+            //var coords = _.map(featureCollection,function(m){return m.geometry.coordinates});
+            var coords = _.map(featureCollection,function(m){return [m.geometry.coordinates[1],m.geometry.coordinates[0]]}); // LatLng
+            var heatLayer = L.heatLayer(coords,{
+                gradient: {
+                    0.1:"#D86FD0",
+                    1:"#D8A86F"
+                }
+            });
+
+            var markerLayer = new L.MarkerClusterGroup({showCoverageOnHover:false});
+
 
             L.geoJson(featureCollection, {
                 pointToLayer: L.mapbox.marker.style,
@@ -81,10 +90,13 @@ var app = app || {};
                     }).on('click',function(){
                         return
                     })
-
                 }
-            }).addTo(this.layer);
-            this.map.addLayer(this.layer);
+            }).addTo(markerLayer);
+
+            // somehow directly addTo(this.map) will only add individual marker layers
+            this.map
+            .addLayer(heatLayer)
+            .addLayer(markerLayer);
         }
     });
 
