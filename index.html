@@ -25,25 +25,15 @@
 <BODY>
     <div id="disaster-app" class="tall">
         <!-- subnav -->
-        <div data-magellan-expedition="fixed">
+<!--         <div data-magellan-expedition="fixed">
             <dl class="sub-nav">
-                <dd data-magellan-arrival="reports"><a href="#reports">Current Reports</a></dd>
-                <dd data-magellan-arrival="twitter"><a href="#twitter">Ongoing Tweets</a></dd>
-                <dd data-magellan-arrival="past"><a href="#past">Past Disasters</a></dd>
-                <dd data-magellan-arrival="profile"><a href="#profile">Country Profile</a></dd>
+                <dd data-magellan-arrival="reports"><a href="#reports">Disasters and reports</a></dd>
+                <dd data-magellan-arrival="context"><a href="#context">Contexts</a></dd>
             </dl>
-        </div>
+        </div> -->
         <!-- fisrt section -->
-        <div class="tall">
-            <a name="reports" data-magellan-destination="reports"></a>
-            <div id="app-map" class="map">&nbsp;</div>
-<!--             <div id="main-story" class="overlay finger">
-                <h6 class="source">Christian Blind Mission</h6>
-                <h1>Hurricane Haiyan</h1>
-                <p class="dateline">19 November, 2013</p>
-                <p><strong>Working to ensure persons with disabilities are not forgotten</strong></p>
-                <p>One of the strongest typhoons ever to hit land has slammed the Philippines, forcing millions to take shelter. Super Typhoon Haiyan (locally named 'Yolanda') made its first landfall on 8 November, with... <a href="#">Read full story <i class="fa fa-external-link"></i></a></p>
-            </div> -->
+        <div class="tall main">
+            <a name="reports"></a>
             <div class='reports'>
                 <!-- begin search -->
                 <form id="report-search">
@@ -99,17 +89,30 @@
                     <li class="arrow next"><a href="#">&raquo;</a></li>
                 </ul>
             </div>
+            <!-- map -->
+            <div id="app-map" class="map" data-magellan-destination="reports">&nbsp;</div>
+<!--             <div id="main-story" class="overlay finger">
+                <h6 class="source">Christian Blind Mission</h6>
+                <h1>Hurricane Haiyan</h1>
+                <p class="dateline">19 November, 2013</p>
+                <p><strong>Working to ensure persons with disabilities are not forgotten</strong></p>
+                <p>One of the strongest typhoons ever to hit land has slammed the Philippines, forcing millions to take shelter. Super Typhoon Haiyan (locally named 'Yolanda') made its first landfall on 8 November, with... <a href="#">Read full story <i class="fa fa-external-link"></i></a></p>
+            </div> -->
         </div>
 
         <!--  twitter search -->
-        <div class="row">
-            <a name='twitter' data-magellan-destination="twitter"></a>
-            <div class="medium-8 column">
+
+        <div class="row tweet" data-magellan-destination="context">
+            <a name='context'></a>
+            <div class='medium-12 column'>
+                <h3>Related Tweets</h3>
+            </div>
+            <div class="small-6 medium-8 column">
                 <label>Search tweets
                     <input type="text" placeholder="e.g. '#haiyan'" />
                 </label>
             </div>
-            <div class="medium-4 column">
+            <div class="small-6 medium-4 column">
                 <label>Sort by
                     <select>
                         <option value="latest">Most recent</option>
@@ -117,33 +120,6 @@
                     </select>
                 </label>
             </div>
-        </div>
-        <!-- twitter feeds -->
-        <div class="row tweet">
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
             <div class='report medium-3 column'>
                 <div class='report-content'>
                     <h6 class="hed">Tweet</h4>
@@ -193,34 +169,26 @@
                 </div>
             </div>
         </div>
-
-        <!-- previous disasters and map -->
-        <div class="row">
-            <div class="column">
-                <a name="past"></a>
-                <h2 data-magellan-destination="past">The Past</h2>
+        <!-- Demographic information -->
+        <div class='row demographic'>
+            <div class='medium-12 column'>
+                <h3>Demographic Data</h3>
             </div>
-        </div>
-
-        <!-- country profile & demographic information -->
-        <div class="row">
-            <div class="column">
-                <a name="profile"></a>
-                <h2 data-magellan-destination="profile">The Profiles</h2>
-            </div>
-
-            <div class="medium-4 column">
-                <h4>Related Relief Web Stories</h4>
-
-                <div class="small-story">
-                    <h6>30 Jan 2014 WORLD FOOD PROGRAMME</h6>
-                    <p>IDPs in Tacloban City will move from evacuation centres to bunkhouses by the end of this week. However, more work is required to prepare the sites.</p>
+            <div class='report medium-6 column'>
+                <div class='report-content'>
+                    <h6 class="hed">graph</h4>
+                    <p class="dateline">Demographic graph 1</p>
+                    <p class="dateline">Demographic graph 2</p>
+                    <p class="dateline">Demographic graph 2</p>
                 </div>
-
             </div>
-
-            <div class="medium-8 column">
-                <h4>Phillipines Demographics</h4>
+            <div class='report medium-6 column'>
+                <div class='report-content'>
+                    <h6 class="hed">graph</h4>
+                    <p class="dateline">Demographic graph 2</p>
+                    <p class="dateline">Demographic graph 2</p>
+                    <p class="dateline">Demographic graph 2</p>
+                </div>
             </div>
         </div>
 

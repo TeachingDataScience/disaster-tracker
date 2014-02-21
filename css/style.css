@@ -82,7 +82,7 @@ label{
 	}
 .reports {
   padding:1em;
-  background:#73B6E6;
+  background:#73B5E5;
   }
 .report {
 	padding:0 1em 2em 1em;
@@ -93,8 +93,14 @@ label{
   background:#F8F6F5;
 	padding:1.45em;
 	}
+.tweet {
+  margin-top:1em;
+  }
 .tweet .report-content {
   background:#A0E5C5;
+  }
+.demographic .report-content {
+  background:#DFCB81;
   }
 .source {
 	font-style: italic;
@@ -108,9 +114,6 @@ label{
   font-weight: 200;
   color: #666;
 	}
-ul.pagination {
-  float:right;
-  }
 ul.pagination li a {
   color:#fff;
   }
