@@ -213,10 +213,32 @@
             </li>
         </script>
 
+        <script type="text/template" id="marker-template">
+            <h5><%- properties.Type %>: <%- properties.Name %></h5>
+            <table>
+                <tr>
+                    <td>Duration:</td>
+                    <td><%- properties.Start %> - <%- properties.End %></td>
+                </tr>
+                <tr>
+                    <td>Affected Population:</td>
+                    <td><%- properties.Affected %></td>
+                </tr>
+                <tr>
+                    <td>Killed:</td>
+                    <td><%- properties.Killed %></td>
+                </tr>
+                <tr>
+                    <td>Damage (millions USD):</td>
+                    <td><%- properties["Damage (million USD)"] %></td>
+                </tr>
+            </table>
+            <small>Location: <b><%- properties.Location %></b> | Location Accuracy: <b><%- properties["geo_accuracy"] %></b></small>
+        </script>
+
     </div>
 
     <script type="text/javascript" src="lib/jquery/jquery-1.11.0.min.js"></script>
-
     <script type="text/javascript" src="lib/foundation/js/fastclick.js"></script>
     <script type="text/javascript" src="lib/foundation/js/foundation.min.js"></script>
 
