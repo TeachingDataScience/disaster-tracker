@@ -16,6 +16,7 @@ var app = app || {};
 
     app.MapView = Backbone.View.extend({
         el: '#app-map',
+        template: _.template($('#marker-template').html()),
 
         events: {},
 
