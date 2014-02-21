@@ -1,5 +1,4 @@
-{
-    "features": [
+[
         {
             "id": "2013-0258",
             "properties": {
@@ -1431,6 +1430,4 @@
                 ]
             }
         }
-    ],
-    "type": "FeatureCollection"
-}
+    ]
