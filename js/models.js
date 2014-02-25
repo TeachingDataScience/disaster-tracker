@@ -22,4 +22,7 @@ var app = app || {};
         },
     });
 
+    app.tweet = Backbone.Model.extend({});
+
+    app.marker = Backbone.Model.extend({});
 })();

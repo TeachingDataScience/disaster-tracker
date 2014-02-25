@@ -16,18 +16,30 @@ var app = app || {};
 
     app.MapView = Backbone.View.extend({
         el: '#app-map',
+        template: _.template($('#marker-template').html()),
 
         events: {},
 
         initialize: function() {
-            var map = L.mapbox.map('app-map', 'rweb.hacei9mm');
+            this.listenTo(app.markers, 'reset', this.addMarker);
+
+            app.markers.fetch({
+                reset: true
+            });
+
+            this.map = L.mapbox.map('app-map', 'jue.hb9ikea3',{
+                minZoom:3,
+                maxZoom:8,
+                scrollWheelZoom:false
+            });
+
             var onload = $.proxy(this.onload, this);
 
             window.setTimeout(onload, 800);
         },
 
         onload: function() {
-            this.show();
+            // this.show();
             app.events.trigger('map:loaded');
         },
 
@@ -37,9 +49,35 @@ var app = app || {};
 
         fade: function() {
             this.$el.removeClass('show');
+        },
+
+        addMarker: function(){
+            var view = this;
+            
+            var featureCollection = app.markers.toJSON();
+
+            _.each(featureCollection,function(f){
+                f.properties['marker-size'] = 'small';
+                f.properties['marker-color'] = '#E68080';
+                f.properties.popup = view.template(f);
+            });
+
+            L.geoJson(featureCollection, {
+                pointToLayer: L.mapbox.marker.style,
+                onEachFeature: function (feature, layer) {
+                    var brief = L.popup({
+                        closeButton: false,
+                        minWidth: 320,
+                        offset: new L.Point(0,-20)
+                    })
+                    .setContent(feature.properties.popup)
+                    .setLatLng(layer.getLatLng());
+
+                    view.map.openPopup(brief);
+                    layer.bindPopup(brief);
+                }
+            }).addTo(this.map);
         }
-
-
     });
 
     app.AppView = Backbone.View.extend({
@@ -75,9 +113,12 @@ var app = app || {};
         initialize: function () {
 
             this.$reports = this.$('#report-list');
+            this.$tweets = this.$('#tweet-list');
 
             //this.listenTo(app.stories, 'add', this.addOne);
+
             this.listenTo(app.stories, 'reset', this.addAll);
+
             //this.listenTo(app.stories, 'change:completed', this.filterOne);
             //this.listenTo(app.stories, 'filter', this.filterAll);
             //this.listenTo(app.stories, 'all', this.render);
@@ -94,6 +135,11 @@ var app = app || {};
                 reset: true,
                 data: _.extend({}, this.params, { query: query })
             });
+
+            // get all the tweets from the json file
+            app.tweets.fetch({
+                reset:true
+            })
         },
 
         render: function () {
@@ -102,6 +148,7 @@ var app = app || {};
 
         addAll: function() {
             app.stories.each(this.addOne, this);
+            app.tweets.each(this.addOneTweet, this);
         },
 
         addOne: function(story, index) {
@@ -111,18 +158,22 @@ var app = app || {};
                 // figure out if it's the same disaster we're tracking here
             }
 
-            var view = new app.ReportView({ model: story });
-            this.$reports.append(view.render().el);
+            var reportView = new app.ReportView({ model: story });
+            this.$reports.append(reportView.render().el);
         },
 
+        addOneTweet: function(tweet, index) {
+            var tweetView = new app.TweetView({model: tweet});
+            this.$tweets.append(tweetView.render().el);
+        }
     });
 
     app.ReportSearch = Backbone.View.extend({
         el: '#report-search',
 
         text: {
-            hide: 'Hide search options &#x25B2;',
-            show: 'Show search options &#x25BC;'
+            hide: 'General',
+            show: 'Advanced'
         },
 
         events: {
@@ -238,6 +289,23 @@ var app = app || {};
 
     });
 
+    app.TweetView = Backbone.View.extend({
+        tagName: 'div',
+        template: _.template($('#tweet-template').html()),
+        events: {
+
+        },
+        initialize: function() {
+
+        },
+        render: function() {
+            // check for number of model
+            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.addClass('report medium-4 column')
+            return this
+        }
+    });
+
     app.ReportView = Backbone.View.extend({
 
         tagName: 'div',
@@ -252,7 +320,7 @@ var app = app || {};
 
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
-            this.$el.addClass('report');
+            this.$el.addClass('report medium-6 column');
             return this;
         }
 

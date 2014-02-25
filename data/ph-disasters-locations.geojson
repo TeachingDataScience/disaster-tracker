@@ -1,0 +1,1433 @@
+[
+        {
+            "id": "2013-0258",
+            "properties": {
+                "Killed": "",
+                "End": "30/06/2013",
+                "lon": 120.4957455,
+                "Start": "30/06/2013",
+                "Type": "Storm",
+                "Damage (million USD)": 1,
+                "Location": "Visayas, Luzon",
+                "Country": "Philippines",
+                "Affected": 1000,
+                "Name": "Typhoon Rumbia",
+                "geo_accuracy": "secondary",
+                "ID": "2013-0258",
+                "Sub Type": "Tropical cyclone",
+                "lat": 14.4410622
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.4957455,
+                    14.4410622
+                ]
+            }
+        },
+        {
+            "id": "2012-0406",
+            "properties": {
+                "Killed": 36,
+                "End": "25/10/2012",
+                "lon": 122.7312101,
+                "Start": "25/10/2012",
+                "Type": "Storm",
+                "Damage (million USD)": 1.339,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 108040,
+                "Name": "Typhoon Son Tinh (Ofel)",
+                "geo_accuracy": "administrative",
+                "ID": "2012-0406",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "2012-0434",
+            "properties": {
+                "Killed": 1,
+                "End": "14/09/2012",
+                "lon": 121.033383079912,
+                "Start": "13/09/2012",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "NCR, Region III",
+                "Country": "Philippines",
+                "Affected": 1234,
+                "Name": "Typhoon Karen",
+                "geo_accuracy": "commercial",
+                "ID": "2012-0434",
+                "Sub Type": "Tropical cyclone",
+                "lat": 14.5842844
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    121.033383079912,
+                    14.5842844
+                ]
+            }
+        },
+        {
+            "id": "2012-0294",
+            "properties": {
+                "Killed": 4,
+                "End": "17/08/2012",
+                "lon": 122.7312101,
+                "Start": "17/08/2012",
+                "Type": "Storm",
+                "Damage (million USD)": 3,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": "",
+                "Name": "TYphoon Kai-Tak",
+                "geo_accuracy": "administrative",
+                "ID": "2012-0294",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "2011-0576",
+            "properties": {
+                "Killed": "",
+                "End": "24/06/2011",
+                "lon": 122.7312101,
+                "Start": "19/06/2011",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": "",
+                "Name": "Tropical Storm Haima (Egay)",
+                "geo_accuracy": "administrative",
+                "ID": "2011-0576",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "2008-0155",
+            "properties": {
+                "Killed": 1,
+                "End": "13/04/2008",
+                "lon": 124.8612728,
+                "Start": "13/04/2008",
+                "Type": "Storm",
+                "Damage (million USD)": 16,
+                "Location": "Mindanao Island",
+                "Country": "Philippines",
+                "Affected": "",
+                "Name": "Typhoon 'Neoguri' (Ambo)",
+                "geo_accuracy": "island",
+                "ID": "2008-0155",
+                "Sub Type": "Tropical cyclone",
+                "lat": 8.0377734
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    124.8612728,
+                    8.0377734
+                ]
+            }
+        },
+        {
+            "id": "2007-0457",
+            "properties": {
+                "Killed": 2,
+                "End": "25/09/2007",
+                "lon": 123.020932232322,
+                "Start": "17/09/2007",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "Negros Occidental",
+                "Country": "Philippines",
+                "Affected": 30000,
+                "Name": "Wipha/Goring",
+                "geo_accuracy": "aerodrome",
+                "ID": "2007-0457",
+                "Sub Type": "Tropical cyclone",
+                "lat": 10.77981305
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    123.020932232322,
+                    10.77981305
+                ]
+            }
+        },
+        {
+            "id": "2004-0618",
+            "properties": {
+                "Killed": 8,
+                "End": "Fri Mar 12 00:00:00 GMT-05:00 2004",
+                "lon": 121.1025924,
+                "Start": "30/11/2004",
+                "Type": "Storm",
+                "Damage (million USD)": 34,
+                "Location": "Bicol",
+                "Country": "Philippines",
+                "Affected": 70488,
+                "Name": "Nanmadol (Yoyong/30W)",
+                "geo_accuracy": "residential",
+                "ID": "2004-0618",
+                "Sub Type": "Tropical cyclone",
+                "lat": 14.7161252
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    121.1025924,
+                    14.7161252
+                ]
+            }
+        },
+        {
+            "id": "2004-0218",
+            "properties": {
+                "Killed": 31,
+                "End": "19/05/2004",
+                "lon": 121.1025924,
+                "Start": "13/05/2004",
+                "Type": "Storm",
+                "Damage (million USD)": 1,
+                "Location": "Bicol region",
+                "Country": "Philippines",
+                "Affected": 714,
+                "Name": "Nida (Dindo/04W)",
+                "geo_accuracy": "residential",
+                "ID": "2004-0218",
+                "Sub Type": "Tropical cyclone",
+                "lat": 14.7161252
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    121.1025924,
+                    14.7161252
+                ]
+            }
+        },
+        {
+            "id": "2003-0824",
+            "properties": {
+                "Killed": "",
+                "End": "Thu May 08 00:00:00 GMT-04:00 2003",
+                "lon": 120.437985670342,
+                "Start": "Tue Apr 08 00:00:00 GMT-04:00 2003",
+                "Type": "Storm",
+                "Damage (million USD)": 0.661,
+                "Location": "Region III",
+                "Country": "Philippines",
+                "Affected": 155147,
+                "Name": "Kabayan",
+                "geo_accuracy": "industrial",
+                "ID": "2003-0824",
+                "Sub Type": "Tropical cyclone",
+                "lat": 17.15551455
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.437985670342,
+                    17.15551455
+                ]
+            }
+        },
+        {
+            "id": "2002-0423",
+            "properties": {
+                "Killed": 62,
+                "End": "13/07/2002",
+                "lon": 122.7312101,
+                "Start": "13/07/2002",
+                "Type": "Storm",
+                "Damage (million USD)": 5.664,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 11000,
+                "Name": "Halong (Anday)",
+                "geo_accuracy": "administrative",
+                "ID": "2002-0423",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "2002-0408",
+            "properties": {
+                "Killed": 33,
+                "End": "Sat Sep 07 00:00:00 GMT-04:00 2002",
+                "lon": 120.98838,
+                "Start": "Sun Jul 07 00:00:00 GMT-04:00 2002",
+                "Type": "Storm",
+                "Damage (million USD)": 1,
+                "Location": "Manilla",
+                "Country": "Philippines",
+                "Affected": 700041,
+                "Name": "Chata'an",
+                "geo_accuracy": "university",
+                "ID": "2002-0408",
+                "Sub Type": "Tropical cyclone",
+                "lat": 14.60213
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.98838,
+                    14.60213
+                ]
+            }
+        },
+        {
+            "id": "2001-0792",
+            "properties": {
+                "Killed": "",
+                "End": "19/08/2001",
+                "lon": 120.437985670342,
+                "Start": "17/08/2001",
+                "Type": "Storm",
+                "Damage (million USD)": 0.293,
+                "Location": "Region III",
+                "Country": "Philippines",
+                "Affected": 295355,
+                "Name": "TD Jolina",
+                "geo_accuracy": "industrial",
+                "ID": "2001-0792",
+                "Sub Type": "",
+                "lat": 17.15551455
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.437985670342,
+                    17.15551455
+                ]
+            }
+        },
+        {
+            "id": "2000-0396",
+            "properties": {
+                "Killed": 11,
+                "End": "Sun May 07 00:00:00 GMT-04:00 2000",
+                "lon": 120.98838,
+                "Start": "Sun May 07 00:00:00 GMT-04:00 2000",
+                "Type": "Storm",
+                "Damage (million USD)": 7.5,
+                "Location": "Manilla",
+                "Country": "Philippines",
+                "Affected": 120000,
+                "Name": "Kirogi",
+                "geo_accuracy": "university",
+                "ID": "2000-0396",
+                "Sub Type": "Tropical cyclone",
+                "lat": 14.60213
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.98838,
+                    14.60213
+                ]
+            }
+        },
+        {
+            "id": "1999-0727",
+            "properties": {
+                "Killed": 1,
+                "End": "15/09/1999",
+                "lon": 120.437985670342,
+                "Start": "Sat Oct 09 00:00:00 GMT-04:00 1999",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "Region III",
+                "Country": "Philippines",
+                "Affected": 1507,
+                "Name": "Neneng",
+                "geo_accuracy": "industrial",
+                "ID": "1999-0727",
+                "Sub Type": "",
+                "lat": 17.15551455
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.437985670342,
+                    17.15551455
+                ]
+            }
+        },
+        {
+            "id": "1999-0725",
+            "properties": {
+                "Killed": 47,
+                "End": "Fri Jan 08 00:00:00 GMT-05:00 1999",
+                "lon": 120.437985670342,
+                "Start": "28/07/1999",
+                "Type": "Storm",
+                "Damage (million USD)": 33.795,
+                "Location": "Region III",
+                "Country": "Philippines",
+                "Affected": 1245919,
+                "Name": "Ising (Olga)",
+                "geo_accuracy": "industrial",
+                "ID": "1999-0725",
+                "Sub Type": "",
+                "lat": 17.15551455
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.437985670342,
+                    17.15551455
+                ]
+            }
+        },
+        {
+            "id": "1998-0314",
+            "properties": {
+                "Killed": 332,
+                "End": "21/10/1998",
+                "lon": 123.55,
+                "Start": "21/10/1998",
+                "Type": "Storm",
+                "Damage (million USD)": 71,
+                "Location": "Albay",
+                "Country": "Philippines",
+                "Affected": 3902424,
+                "Name": "Babs (Loleng)",
+                "geo_accuracy": "administrative",
+                "ID": "1998-0314",
+                "Sub Type": "Tropical cyclone",
+                "lat": 13.216667
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    123.55,
+                    13.216667
+                ]
+            }
+        },
+        {
+            "id": "1994-0071",
+            "properties": {
+                "Killed": 11,
+                "End": "19/07/1994",
+                "lon": 120.719715285742,
+                "Start": "19/07/1994",
+                "Type": "Storm",
+                "Damage (million USD)": 37.6,
+                "Location": "Pampanga, Bulacan, Bataan ...",
+                "Country": "Philippines",
+                "Affected": 420728,
+                "Name": "Yunya (Norming)",
+                "geo_accuracy": "riverbank",
+                "ID": "1994-0071",
+                "Sub Type": "Tropical cyclone",
+                "lat": 14.8861528
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.719715285742,
+                    14.8861528
+                ]
+            }
+        },
+        {
+            "id": "1994-0313",
+            "properties": {
+                "Killed": 39,
+                "End": "15/07/1994",
+                "lon": 120.3509967,
+                "Start": "15/07/1994",
+                "Type": "Storm",
+                "Damage (million USD)": 1.7,
+                "Location": "Pinatubo, Luzon",
+                "Country": "Philippines",
+                "Affected": "",
+                "Name": "Oyang",
+                "geo_accuracy": "volcano",
+                "ID": "1994-0313",
+                "Sub Type": "Tropical cyclone",
+                "lat": 15.1445511
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.3509967,
+                    15.1445511
+                ]
+            }
+        },
+        {
+            "id": "1994-0034",
+            "properties": {
+                "Killed": 15,
+                "End": "Sun Sep 04 00:00:00 GMT-04:00 1994",
+                "lon": 123.4198576,
+                "Start": "Sun Sep 04 00:00:00 GMT-04:00 1994",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "Negros Occidental, Cebu, ...",
+                "Country": "Philippines",
+                "Affected": 105746,
+                "Name": "Owen (Bising)",
+                "geo_accuracy": "place_of_worship",
+                "ID": "1994-0034",
+                "Sub Type": "Tropical cyclone",
+                "lat": 10.4849928
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    123.4198576,
+                    10.4849928
+                ]
+            }
+        },
+        {
+            "id": "1993-0088",
+            "properties": {
+                "Killed": 1,
+                "End": "23/11/1993",
+                "lon": 122.7312101,
+                "Start": "20/11/1993",
+                "Type": "Storm",
+                "Damage (million USD)": 2,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": "",
+                "Name": "Kyle",
+                "geo_accuracy": "administrative",
+                "ID": "1993-0088",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1993-0298",
+            "properties": {
+                "Killed": 28,
+                "End": "00/02/1993",
+                "lon": 125.026923751492,
+                "Start": "00/02/1993",
+                "Type": "Storm",
+                "Damage (million USD)": 40,
+                "Location": "Leyte",
+                "Country": "Philippines",
+                "Affected": 70000,
+                "Name": "",
+                "geo_accuracy": "aerodrome",
+                "ID": "1993-0298",
+                "Sub Type": "",
+                "lat": 11.22782815
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    125.026923751492,
+                    11.22782815
+                ]
+            }
+        },
+        {
+            "id": "1990-0687",
+            "properties": {
+                "Killed": "",
+                "End": "Thu Aug 09 00:00:00 GMT-04:00 1990",
+                "lon": 122.7312101,
+                "Start": "Thu Aug 09 00:00:00 GMT-04:00 1990",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": "",
+                "Name": "Dot",
+                "geo_accuracy": "administrative",
+                "ID": "1990-0687",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1990-0401",
+            "properties": {
+                "Killed": 85,
+                "End": "30/08/1990",
+                "lon": 125.5921257,
+                "Start": "30/08/1990",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "North",
+                "Country": "Philippines",
+                "Affected": "",
+                "Name": "Abe",
+                "geo_accuracy": "residential",
+                "ID": "1990-0401",
+                "Sub Type": "Tropical cyclone",
+                "lat": 7.0651109
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    125.5921257,
+                    7.0651109
+                ]
+            }
+        },
+        {
+            "id": "1990-0400",
+            "properties": {
+                "Killed": 85,
+                "End": "28/08/1990",
+                "lon": 122.7312101,
+                "Start": "28/08/1990",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": "",
+                "Name": "Becky",
+                "geo_accuracy": "administrative",
+                "ID": "1990-0400",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1989-0120",
+            "properties": {
+                "Killed": 97,
+                "End": "15/07/1989",
+                "lon": 120.384575,
+                "Start": "15/07/1989",
+                "Type": "Storm",
+                "Damage (million USD)": 61,
+                "Location": "Ilocos Sur, Ilocos Norte, ...",
+                "Country": "Philippines",
+                "Affected": 486382,
+                "Name": "Gordon (Goring)",
+                "geo_accuracy": "school",
+                "ID": "1989-0120",
+                "Sub Type": "Tropical cyclone",
+                "lat": 17.5600383
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.384575,
+                    17.5600383
+                ]
+            }
+        },
+        {
+            "id": "1989-0187",
+            "properties": {
+                "Killed": 13,
+                "End": "15/05/1989",
+                "lon": 122.7312101,
+                "Start": "15/05/1989",
+                "Type": "Storm",
+                "Damage (million USD)": 2.86,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 12937,
+                "Name": "Breda (Bining)",
+                "geo_accuracy": "administrative",
+                "ID": "1989-0187",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1988-0557",
+            "properties": {
+                "Killed": 41,
+                "End": "Mon Jan 11 00:00:00 GMT-05:00 1988",
+                "lon": 122.7312101,
+                "Start": "Mon Jan 11 00:00:00 GMT-05:00 1988",
+                "Type": "Storm",
+                "Damage (million USD)": 0.94,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 28913,
+                "Name": "Tess (Welpring)",
+                "geo_accuracy": "administrative",
+                "ID": "1988-0557",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1988-0231",
+            "properties": {
+                "Killed": 36,
+                "End": "30/05/1988",
+                "lon": 122.7312101,
+                "Start": "30/05/1988",
+                "Type": "Storm",
+                "Damage (million USD)": 1,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 56000,
+                "Name": "Susan (Biring)",
+                "geo_accuracy": "administrative",
+                "ID": "1988-0231",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1987-0240",
+            "properties": {
+                "Killed": 22,
+                "End": "14/12/1987",
+                "lon": 122.7312101,
+                "Start": "14/12/1987",
+                "Type": "Storm",
+                "Damage (million USD)": 8.5,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 56380,
+                "Name": "Phillis (Trining)",
+                "geo_accuracy": "administrative",
+                "ID": "1987-0240",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1987-0239",
+            "properties": {
+                "Killed": 5,
+                "End": "13/08/1987",
+                "lon": 122.7312101,
+                "Start": "13/08/1987",
+                "Type": "Storm",
+                "Damage (million USD)": 5.6,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 13336,
+                "Name": "Cart (Ising)",
+                "geo_accuracy": "administrative",
+                "ID": "1987-0239",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1986-0153",
+            "properties": {
+                "Killed": 16,
+                "End": "20/12/1986",
+                "lon": 122.7312101,
+                "Start": "20/12/1986",
+                "Type": "Storm",
+                "Damage (million USD)": 4,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 26722,
+                "Name": "Narge (Aning)",
+                "geo_accuracy": "administrative",
+                "ID": "1986-0153",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1986-0152",
+            "properties": {
+                "Killed": 2,
+                "End": "17/10/1986",
+                "lon": 122.7312101,
+                "Start": "17/10/1986",
+                "Type": "Storm",
+                "Damage (million USD)": 36,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 308,
+                "Name": "Georgia (Ruping)",
+                "geo_accuracy": "administrative",
+                "ID": "1986-0152",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1986-0151",
+            "properties": {
+                "Killed": 4,
+                "End": "Fri Oct 10 00:00:00 GMT-04:00 1986",
+                "lon": 122.7312101,
+                "Start": "Fri Oct 10 00:00:00 GMT-04:00 1986",
+                "Type": "Storm",
+                "Damage (million USD)": 1.4,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 3134,
+                "Name": "Ellen (Daling)",
+                "geo_accuracy": "administrative",
+                "ID": "1986-0151",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1986-0122",
+            "properties": {
+                "Killed": 22,
+                "End": "Tue Jun 10 00:00:00 GMT-04:00 1986",
+                "lon": 121.046674589114,
+                "Start": "Tue Jun 10 00:00:00 GMT-04:00 1986",
+                "Type": "Storm",
+                "Damage (million USD)": 1.2,
+                "Location": "Muntinlupa, Metro Manila, ...",
+                "Country": "Philippines",
+                "Affected": 82555,
+                "Name": "Dom (Oyang)",
+                "geo_accuracy": "industrial",
+                "ID": "1986-0122",
+                "Sub Type": "Tropical cyclone",
+                "lat": 14.42863085
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    121.046674589114,
+                    14.42863085
+                ]
+            }
+        },
+        {
+            "id": "1985-0192",
+            "properties": {
+                "Killed": 5,
+                "End": "Wed Jan 09 00:00:00 GMT-05:00 1985",
+                "lon": 122.7312101,
+                "Start": "Wed Jan 09 00:00:00 GMT-05:00 1985",
+                "Type": "Storm",
+                "Damage (million USD)": 0.66,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 148,
+                "Name": "Tess (Miling)",
+                "geo_accuracy": "administrative",
+                "ID": "1985-0192",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1984-0186",
+            "properties": {
+                "Killed": 63,
+                "End": "23/10/1984",
+                "lon": 122.7312101,
+                "Start": "23/10/1984",
+                "Type": "Storm",
+                "Damage (million USD)": 0.19,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 2694,
+                "Name": "Warren (Reming)",
+                "geo_accuracy": "administrative",
+                "ID": "1984-0186",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1983-0220",
+            "properties": {
+                "Killed": 8,
+                "End": "17/11/1983",
+                "lon": 122.7312101,
+                "Start": "17/11/1983",
+                "Type": "Storm",
+                "Damage (million USD)": 2.25,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 18854,
+                "Name": "Orchid (Warling)",
+                "geo_accuracy": "administrative",
+                "ID": "1983-0220",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1983-0254",
+            "properties": {
+                "Killed": 2,
+                "End": "16/09/1983",
+                "lon": 123.8533261,
+                "Start": "16/09/1983",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "Bohol",
+                "Country": "Philippines",
+                "Affected": 100,
+                "Name": "",
+                "geo_accuracy": "aerodrome",
+                "ID": "1983-0254",
+                "Sub Type": "Local storm",
+                "lat": 9.6577665
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    123.8533261,
+                    9.6577665
+                ]
+            }
+        },
+        {
+            "id": "1983-0219",
+            "properties": {
+                "Killed": 3,
+                "End": "Wed Mar 09 00:00:00 GMT-05:00 1983",
+                "lon": 122.7312101,
+                "Start": "Wed Mar 09 00:00:00 GMT-05:00 1983",
+                "Type": "Storm",
+                "Damage (million USD)": 0.43,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 1684,
+                "Name": "Ellen (Herming)",
+                "geo_accuracy": "administrative",
+                "ID": "1983-0219",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1982-0093",
+            "properties": {
+                "Killed": 70,
+                "End": "25/08/1982",
+                "lon": 121.0238417,
+                "Start": "25/08/1982",
+                "Type": "Storm",
+                "Damage (million USD)": 6.5,
+                "Location": "West",
+                "Country": "Philippines",
+                "Affected": 25967,
+                "Name": "Faye",
+                "geo_accuracy": "unclassified",
+                "ID": "1982-0093",
+                "Sub Type": "Tropical cyclone",
+                "lat": 14.551267
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    121.0238417,
+                    14.551267
+                ]
+            }
+        },
+        {
+            "id": "1982-0175",
+            "properties": {
+                "Killed": 29,
+                "End": "20/08/1982",
+                "lon": 122.7312101,
+                "Start": "20/08/1982",
+                "Type": "Storm",
+                "Damage (million USD)": 4.2,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 36927,
+                "Name": "(Norming)",
+                "geo_accuracy": "administrative",
+                "ID": "1982-0175",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1982-0174",
+            "properties": {
+                "Killed": 10,
+                "End": "Tue Dec 07 00:00:00 GMT-05:00 1982",
+                "lon": 122.7312101,
+                "Start": "Tue Dec 07 00:00:00 GMT-05:00 1982",
+                "Type": "Storm",
+                "Damage (million USD)": 4.5,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 12319,
+                "Name": "(Emang)",
+                "geo_accuracy": "administrative",
+                "ID": "1982-0174",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1982-0173",
+            "properties": {
+                "Killed": 25,
+                "End": "18/03/1982",
+                "lon": 122.7312101,
+                "Start": "18/03/1982",
+                "Type": "Storm",
+                "Damage (million USD)": 2.4,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 25099,
+                "Name": "(Akang)",
+                "geo_accuracy": "administrative",
+                "ID": "1982-0173",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1981-0101",
+            "properties": {
+                "Killed": 261,
+                "End": "25/11/1981",
+                "lon": 122.7312101,
+                "Start": "25/11/1981",
+                "Type": "Storm",
+                "Damage (million USD)": 35,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 840173,
+                "Name": "Irma (Anding)",
+                "geo_accuracy": "administrative",
+                "ID": "1981-0101",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1981-0138",
+            "properties": {
+                "Killed": 4,
+                "End": "17/11/1981",
+                "lon": 122.7312101,
+                "Start": "17/11/1981",
+                "Type": "Storm",
+                "Damage (million USD)": 0.167,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 5736,
+                "Name": "(Yeyeng)",
+                "geo_accuracy": "administrative",
+                "ID": "1981-0138",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1981-0136",
+            "properties": {
+                "Killed": 5,
+                "End": "16/08/1981",
+                "lon": 122.7312101,
+                "Start": "16/08/1981",
+                "Type": "Storm",
+                "Damage (million USD)": 12.908,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 9721,
+                "Name": "(Rubing)",
+                "geo_accuracy": "administrative",
+                "ID": "1981-0136",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1981-0062",
+            "properties": {
+                "Killed": "",
+                "End": "Tue Apr 07 00:00:00 GMT-05:00 1981",
+                "lon": 121.4236333,
+                "Start": "Tue Apr 07 00:00:00 GMT-05:00 1981",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "Oriental Mindoro",
+                "Country": "Philippines",
+                "Affected": 28500,
+                "Name": "",
+                "geo_accuracy": "bank",
+                "ID": "1981-0062",
+                "Sub Type": "Tropical cyclone",
+                "lat": 13.9293618
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    121.4236333,
+                    13.9293618
+                ]
+            }
+        },
+        {
+            "id": "1981-0134",
+            "properties": {
+                "Killed": 210,
+                "End": "28/06/1981",
+                "lon": 122.7312101,
+                "Start": "28/06/1981",
+                "Type": "Storm",
+                "Damage (million USD)": 7.609,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 15478,
+                "Name": "(Daling)",
+                "geo_accuracy": "administrative",
+                "ID": "1981-0134",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1980-0067",
+            "properties": {
+                "Killed": 31,
+                "End": "21/07/1980",
+                "lon": 124.5449162,
+                "Start": "21/07/1980",
+                "Type": "Storm",
+                "Damage (million USD)": 15.4,
+                "Location": "Northern",
+                "Country": "Philippines",
+                "Affected": 600000,
+                "Name": "Joe",
+                "geo_accuracy": "aerodrome",
+                "ID": "1980-0067",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.0734353
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    124.5449162,
+                    12.0734353
+                ]
+            }
+        },
+        {
+            "id": "1980-0136",
+            "properties": {
+                "Killed": 36,
+                "End": "19/07/1980",
+                "lon": 122.7312101,
+                "Start": "19/07/1980",
+                "Type": "Storm",
+                "Damage (million USD)": "",
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 69237,
+                "Name": "(Nitang/Osang)",
+                "geo_accuracy": "administrative",
+                "ID": "1980-0136",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1980-0133",
+            "properties": {
+                "Killed": "",
+                "End": "Sat Jul 05 00:00:00 GMT-04:00 1980",
+                "lon": 122.7312101,
+                "Start": "Sat Jul 05 00:00:00 GMT-04:00 1980",
+                "Type": "Storm",
+                "Damage (million USD)": 0.289,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 3063,
+                "Name": "(Ditang)",
+                "geo_accuracy": "administrative",
+                "ID": "1980-0133",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        },
+        {
+            "id": "1980-0132",
+            "properties": {
+                "Killed": 4,
+                "End": "20/03/1980",
+                "lon": 122.7312101,
+                "Start": "20/03/1980",
+                "Type": "Storm",
+                "Damage (million USD)": 0.402,
+                "Location": "",
+                "Country": "Philippines",
+                "Affected": 665,
+                "Name": "(Biring)",
+                "geo_accuracy": "administrative",
+                "ID": "1980-0132",
+                "Sub Type": "Tropical cyclone",
+                "lat": 12.7503486
+            },
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    122.7312101,
+                    12.7503486
+                ]
+            }
+        }
+    ]

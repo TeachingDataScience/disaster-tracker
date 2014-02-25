@@ -1,0 +1,161 @@
+body,
+.tall {
+  height: 100%;
+  height: 100vh;
+	}
+h1,
+h3{
+  font-family: 'Georgia', Times, "Times New Roman", serif;
+  color: #333;
+	}
+h2,
+h4,
+h5,
+h6,
+p {
+  font-family: 'Lato', "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  color: #333;
+	}
+h3 {
+  font-size: 1.75em;
+  line-height: 1.75em;
+	}
+h3 span {
+  font-style:italic;
+  }
+h6,label {
+  font-size: 0.777em;
+  line-height: 1em;
+  color: #777;
+	}
+p {
+  font-size:0.8em;
+}
+form {
+  margin:0;
+  }
+label{
+  margin-bottom:0.666em;
+  }
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  border: 1px solid #ccc;
+  }
+[data-magellan-expedition] {
+  border-bottom:1px solid #333;
+  }
+.relative {
+  position: relative;
+	}
+/* map */
+.map,
+.reports {
+  height:100%;
+	}
+.map {
+  /*opacity: 0.2;*/
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  transition: opacity 1s;
+	}
+.map.show {
+  opacity: 1;
+	}
+/*main story*/
+#main-story {
+  margin-top:-20%;
+  background:#fff;
+  opacity:0.8;
+  z-index:10;
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-ou;
+  -ms-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+  }
+#main-story.slide-in {
+  }
+/* reports */
+.reports {
+  background:#85A9B5;
+  }
+.report {
+	padding:0 1em 1.45em;
+	}
+.report img {
+  width:24px;
+  margin-right:0.2em;
+  }
+.report-top {
+  padding: 1em;
+  background: #DAD6CA;
+  }
+.report-content {
+	overflow-y:hidden;
+  min-height:11.5em;
+	max-height:11.5em;
+  background:#fff;
+	padding:1em;
+	}
+.readmore {
+  position:absolute;
+  left:inherit;
+  bottom:4em;
+  }
+.tweet {
+  margin-top:1em;
+  }
+.tweet .report-top {
+  background:#ddd;
+  }
+.tweet .report-content {
+  border:1px solid #ddd;
+  }
+.source {
+	font-style: italic;
+  color: #666;
+  margin: 0 0 0.6775em;
+	}
+.dateline {
+  font-weight: 200;
+  color: #666;
+	}
+ul.pagination li a:hover,
+ul.pagination li.current a {
+  background-color: #008CBA;
+  -webkit-transition: background-color 400ms ease-in-out;
+  -moz-transition: background-color 400ms ease-in-out;
+  -o-transition: background-color 400ms ease-in-out;
+  -ms-transition: background-color 400ms ease-in-out;
+  transition: background-color 400ms ease-in-out;
+	}
+.slider {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  -ms-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+	}
+.slider.hidden {
+  position: absolute;
+  top: -80px;
+  width: 100%;
+  opacity: 0;
+	}
