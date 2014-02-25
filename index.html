@@ -26,153 +26,89 @@
         <!-- subnav -->
 <!--         <div data-magellan-expedition="fixed">
             <dl class="sub-nav">
-                <dd data-magellan-arrival="reports"><a href="#reports">Disasters and reports</a></dd>
-                <dd data-magellan-arrival="context"><a href="#context">Contexts</a></dd>
+                <dd data-magellan-arrival="reports"><a href="#reports">Current Disasters & Reports</a></dd>
+                <dd data-magellan-arrival="tweets"><a href="#tweets">Related Tweets</a></dd>
+                <dd data-magellan-arrival="profile"><a href="#">Country Profile</a></dd>
             </dl>
         </div> -->
         <!-- fisrt section -->
-        <div class="tall main">
-            <a name="reports"></a>
-            <div class='reports'>
-                <!-- begin search -->
-                <form id="report-search">
-                    <div class="row">
-                        <div class="medium-9 column">
-                            <div class="row collapse">
-                                <div class="small-10 column">
-                                    <input type="text" placeholder="Search in current reports: eg. 'infrastructure damage'" />
-                                </div>
-                                <div class="small-2 column">
-                                    <input type="submit" value="Search" class="button postfix" />
-                                </div>
-                            </div>
+        <!-- map -->
+        <div id= "app-map" class="medium-4 column map"></div>
+        <div class='reports medium-8 column'>
+            <a name="reports" data-magellan-destination="reports"></a>
+            <h3 class='medium-6 column'>Current Reports: <span>Phillipines</span></h3>
+            <ul id="report-pagination" class="medium-6 column pagination">
+                <li class="arrow prev"><a href="#">&laquo;</a></li>
+                <li class="arrow next"><a href="#">&raquo;</a></li>
+            </ul>
+            <!-- begin search -->
+            <form id="report-search">
+                <div class="medium-9 column">
+                    <div class="row collapse">
+                        <div class="small-10 column">
+                            <input type="text" placeholder="eg. 'infrastructure damage'" />
                         </div>
-                        <div class="medium-3 column">
-                            <button id="expand-search" class="button postfix secondary">Show search</button>
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <div id="search-options" class="slider hidden">
-                            <div class="row">
-                                <div class="medium-3 column">
-                                    <label># of results (1,000 max)
-                                        <input type="text" placeholder="40" />
-                                    </label>
-                                </div>
-                                <div class="medium-2 column">
-                                    <label>Start date
-                                        <input id="datepicker-start" type="text" placeholder="2-3-1980" />
-                                    </label>
-                                </div>
-                                <div class="medium-2 column">
-                                    <label>End date
-                                        <input id="datepicker-end" type="text" placeholder="2-3-1980" />
-                                    </label>
-                                </div>
-                                <div class="medium-5 column">
-                                    <label>Exclude these terms
-                                        <input type="text" placeholder="" />
-                                    </label>
-                                </div>
-                            </div>
+                        <div class="small-2 column">
+                            <input type="submit" value="Search" class="button postfix" />
                         </div>
                     </div>
-                </form>
-                <!-- begin reports -->
-                <div id="report-list" class="row">
-                    <!-- report cards here -->
                 </div>
-                <!-- begin pagination -->
-                <ul id="report-pagination" class="pagination">
-                    <li class="arrow prev"><a href="#">&laquo;</a></li>
-                    <li class="arrow next"><a href="#">&raquo;</a></li>
-                </ul>
+                <div class="medium-3 column">
+                    <button id="expand-search" class="button postfix secondary">Advanced</button>
+                </div>
+                <div class="relative">
+                    <div id="search-options" class="slider hidden">
+                        <div class="medium-2 column">
+                            <label># of results</label>
+                            <input type="text" placeholder="1000 max" />
+                        </div>
+                        <div class="medium-2 column">
+                            <label>Start date</label>
+                            <input id="datepicker-start" type="text" placeholder="2-3-1980" />
+                        </div>
+                        <div class="medium-2 column">
+                            <label>End date</label>
+                            <input id="datepicker-end" type="text" placeholder="2-3-1980" />
+                        </div>
+                        <div class="medium-6 column">
+                            <label>Exclude these terms</label>
+                            <input type="text" placeholder="" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div id="report-list">
+                <!-- report cards here -->
             </div>
-            <!-- map -->
-            <div id="app-map" class="map" data-magellan-destination="reports">&nbsp;</div>
-<!--             <div id="main-story" class="overlay finger">
-                <h6 class="source">Christian Blind Mission</h6>
-                <h1>Hurricane Haiyan</h1>
-                <p class="dateline">19 November, 2013</p>
-                <p><strong>Working to ensure persons with disabilities are not forgotten</strong></p>
-                <p>One of the strongest typhoons ever to hit land has slammed the Philippines, forcing millions to take shelter. Super Typhoon Haiyan (locally named 'Yolanda') made its first landfall on 8 November, with... <a href="#">Read full story <i class="fa fa-external-link"></i></a></p>
-            </div> -->
         </div>
 
         <!--  twitter search -->
-
-        <div class="row tweet" data-magellan-destination="context">
-            <a name='context'></a>
-            <div class='medium-12 column'>
-                <h3>Related Tweets</h3>
-            </div>
+        <div class="row" >
+            <h3 class='medium-12 column'>Related Tweets</h3>
             <div class="small-6 medium-8 column">
-                <label>Search tweets
-                    <input type="text" placeholder="e.g. '#haiyan'" />
-                </label>
+                <label>Search tweets</label>
+                <input type="text" placeholder="e.g. '#haiyan'" />
             </div>
             <div class="small-6 medium-4 column">
-                <label>Sort by
-                    <select>
-                        <option value="latest">Most recent</option>
-                        <option value="earliest">Least recent</option>
-                    </select>
-                </label>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
-            </div>
-            <div class='report medium-3 column'>
-                <div class='report-content'>
-                    <h6 class="hed">Tweet</h4>
-                    <p class="dateline">My name is tweetin'. Tweedin' Tweedin'. Aaaah Tweee Tweee Tweeedin'.</p>
-                </div>
+                <label>Sort by</label>
+                <select>
+                    <option value="latest">Most recent</option>
+                    <option value="earliest">Least recent</option>
+                </select>
             </div>
         </div>
+
+        <!-- tweets -->
+        <a name='tweets' data-magellan-destination="tweets"></a>
+        <div id='tweet-list' class="row tweet">
+            <!-- tweet cards here -->
+        </div>
+
         <!-- Demographic information -->
         <div class='row demographic'>
-            <div class='medium-12 column'>
-                <h3>Demographic Data</h3>
-            </div>
+            <h3 class='medium-12 column'>Demographic Data</h3>
+            <a name='tweets' data-magellan-destination="tweets"></a>
             <div class='report medium-6 column'>
                 <div class='report-content'>
                     <h6 class="hed">graph</h4>
@@ -181,27 +117,33 @@
                     <p class="dateline">Demographic graph 2</p>
                 </div>
             </div>
-            <div class='report medium-6 column'>
-                <div class='report-content'>
-                    <h6 class="hed">graph</h4>
-                    <p class="dateline">Demographic graph 2</p>
-                    <p class="dateline">Demographic graph 2</p>
-                    <p class="dateline">Demographic graph 2</p>
-                </div>
-            </div>
         </div>
-
     </div>
 
     <!-- templates -->
     <div id="templates">
 
         <script type="text/template" id="report-template">
-            <div class='report-content'>
+            <div class='report-top'>
                 <h6 class="source"><%- source[0].name %></h6>
-                <h6 class="hed"><%- title %></h4>
-                <p class="dateline"><%- dateline %></p>
+                <h6 class="dateline"><%- dateline %></h6>
+            </div>
+            <div class='report-content'>
+                <h6 class="hed"><%- title %></h6>
                 <p class="toggle"><%= lead %></p>
+                <small class='readmore'>
+                    <a target="_blank" href="<%- url %>">Read on reliefweb</a> |
+                    <a target="_blank" href="<%- origin %>">Read original article</a>
+                </small>
+            </div>
+        </script>
+
+        <script type="text/template" id="tweet-template">
+            <div class='report-top'>
+                <h5><img src='<%- user_image %>'/><%- user %></h5>
+            </div>
+            <div class='report-content'>
+                <p class="dateline"><%- text %></p>
             </div>
         </script>
 
