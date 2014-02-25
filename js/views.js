@@ -83,59 +83,16 @@ var app = app || {};
     app.AppView = Backbone.View.extend({
 
         el: '#disaster-app',
-
-        events: {
-        },
-
-        params: {
-            limit: 30,
-            fields: {
-                include: {
-                    0: 'body-html',
-                    1: 'country',
-                    2: 'date',
-                    3: 'disaster',
-                    4: 'file',
-                    5: 'headline',
-                    6: 'ocha_product',
-                    7: 'origin',
-                    8: 'source',
-                    9: 'title',
-                    10: 'url',
-                    11: 'vulnerable_groups',
-                    12: 'headline',
-                    13: 'language',
-                }
-            }
-        },
-
-
         initialize: function () {
 
+            // model containers
             this.$reports = this.$('#report-list');
             this.$tweets = this.$('#tweet-list');
-
-            //this.listenTo(app.stories, 'add', this.addOne);
 
             this.listenTo(app.stories, 'reset', this.addStories);
             this.listenTo(app.tweets, 'reset', this.addTweets);
 
-            //this.listenTo(app.stories, 'change:completed', this.filterOne);
-            //this.listenTo(app.stories, 'filter', this.filterAll);
-            //this.listenTo(app.stories, 'all', this.render);
-
-            var query = {
-                value: 'haiyan',
-                fields: {
-                    0: 'title'
-                },
-                operator: 'OR'
-            };
-
-            app.stories.fetch({
-                reset: true,
-                data: _.extend({}, this.params, { query: query })
-            });
+            app.events.trigger('app:start');
 
             app.tweets.fetch({
                 reset: true
@@ -179,12 +136,15 @@ var app = app || {};
 
         events: {
             'click #expand-search': 'toggleSearch',
+            'submit': 'updateQuery'
         },
 
         initialize: function() {
             this.$below = this.$('#search-options');
             this.$toggle = this.$('#expand-search');
             this.toggled = false;
+
+            app.events.once('app:start', this.newApiSearch, this);
 
             // call datepicker on our input fields
             this.$dates = {
@@ -198,7 +158,49 @@ var app = app || {};
                     format: 'mm-dd-yyyy'
                 });
             });
+        },
 
+        params: {
+            limit: 30,
+            fields: {
+                include: {
+                    0: 'body-html',
+                    1: 'country',
+                    2: 'date',
+                    3: 'disaster',
+                    4: 'file',
+                    5: 'headline',
+                    6: 'ocha_product',
+                    7: 'origin',
+                    8: 'source',
+                    9: 'title',
+                    10: 'url',
+                    11: 'vulnerable_groups',
+                    12: 'headline',
+                    13: 'language',
+                }
+            }
+        },
+
+        query: {
+            value: 'haiyan',
+            fields: {
+                0: 'title'
+            },
+            operator: 'OR'
+        },
+
+        updateQuery: function() {
+
+            return false;
+        },
+
+        newApiSearch: function() {
+            console.log('in start!');
+            app.stories.fetch({
+                reset: true,
+                data: _.extend({}, this.params, { query: this.query })
+            });
         },
 
         toggleSearch: function() {
