@@ -156,26 +156,8 @@
         </script>
 
         <script type="text/template" id="marker-template">
-            <h5><%- properties.Type %>: <%- properties.Name %></h5>
-            <table>
-                <tr>
-                    <td>Duration:</td>
-                    <td><%- properties.Start %> - <%- properties.End %></td>
-                </tr>
-                <tr>
-                    <td>Affected Population:</td>
-                    <td><%- properties.Affected %></td>
-                </tr>
-                <tr>
-                    <td>Killed:</td>
-                    <td><%- properties.Killed %></td>
-                </tr>
-                <tr>
-                    <td>Damage (millions USD):</td>
-                    <td><%- properties["Damage (million USD)"] %></td>
-                </tr>
-            </table>
-            <small>Location: <b><%- properties.Location %></b> | Location Accuracy: <b><%- properties["geo_accuracy"] %></b></small>
+            <h3><b><%- properties.title %></b> is the most recent disaster in <b><%- properties.country %></b>.</h3>
+            <iframe width="100%" height="100%" src="//www.youtube.com/embed/<%- properties.youtube %>" frameborder="0" disablekb="1" controls="2" start="130" allowfullscreen></iframe>
         </script>
 
     </div>

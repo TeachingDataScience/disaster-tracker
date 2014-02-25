@@ -1,0 +1,15 @@
+[{
+    "properties": {
+        "country": "Phillipines",
+        "title": "Typhoon Haiyan",
+        "youtube" : "4wrgrJwYdy8"
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            123.4957455,
+            9.4410622
+        ]
+    }
+}]
