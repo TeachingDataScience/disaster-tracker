@@ -1,5 +1,4 @@
 var app = app || {};
-var app = app || {};
 
 String.prototype.trunc = String.prototype.trunc || function(n) {
     return this.length > n ? this.substr(0, this.substr(0, n - 1).lastIndexOf(' ')) + '...' : this;
@@ -31,12 +30,11 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
             var paginated = models.slice(this.page * this.perPage, this.perPage);
 
             return _.map(paginated, function(model) {
-
                 var fields = model.fields,
 
                     // truncate the body to 300 characters
                     html = fields['body-html'],
-                    lead = html ? html.trunc(180) : 'No description available',
+                    lead = html ? html.trunc(140) : 'No description available',
 
                     // get a date string
                     date = fields.date,
@@ -94,13 +92,21 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
     });
 
+    var Tweets = Backbone.Collection.extend({
+        model: app.tweet,
+        url:"/data/tweets.json", // this will be switched to a link on the server
+        parse: function(resp){
+            return resp
+        }
+    })
     var Markers = Backbone.Collection.extend({
-        url:'/data/ph-disasters-locations.geojson',
+        url:'/data/current.geojson',
         parse: function(resp) {
             return resp
         }
     })
 
     app.stories = new Stories();
+    app.tweets = new Tweets();
     app.markers = new Markers();
 })();

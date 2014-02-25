@@ -134,9 +134,12 @@ var app = app || {};
         initialize: function () {
 
             this.$reports = this.$('#report-list');
+            this.$tweets = this.$('#tweet-list');
 
             //this.listenTo(app.stories, 'add', this.addOne);
+
             this.listenTo(app.stories, 'reset', this.addAll);
+
             //this.listenTo(app.stories, 'change:completed', this.filterOne);
             //this.listenTo(app.stories, 'filter', this.filterAll);
             //this.listenTo(app.stories, 'all', this.render);
@@ -153,6 +156,11 @@ var app = app || {};
                 reset: true,
                 data: _.extend({}, this.params, { query: query })
             });
+
+            // get all the tweets from the json file
+            app.tweets.fetch({
+                reset:true
+            })
         },
 
         render: function () {
@@ -161,6 +169,7 @@ var app = app || {};
 
         addAll: function() {
             app.stories.each(this.addOne, this);
+            app.tweets.each(this.addOneTweet, this);
         },
 
         addOne: function(story, index) {
@@ -295,6 +304,23 @@ var app = app || {};
         }
 
 
+    });
+
+    app.TweetView = Backbone.View.extend({
+        tagName: 'div',
+        template: _.template($('#tweet-template').html()),
+        events: {
+
+        },
+        initialize: function() {
+
+        },
+        render: function() {
+            // check for number of model
+            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.addClass('report medium-4 column')
+            return this
+        }
     });
 
     app.ReportView = Backbone.View.extend({
