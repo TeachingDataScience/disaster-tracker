@@ -53,7 +53,7 @@ var app = app || {};
 
         addMarker: function(){
             var view = this;
-            
+
             var featureCollection = app.markers.toJSON();
 
             _.each(featureCollection,function(f){
@@ -117,7 +117,8 @@ var app = app || {};
 
             //this.listenTo(app.stories, 'add', this.addOne);
 
-            this.listenTo(app.stories, 'reset', this.addAll);
+            this.listenTo(app.stories, 'reset', this.addStories);
+            this.listenTo(app.tweets, 'reset', this.addTweets);
 
             //this.listenTo(app.stories, 'change:completed', this.filterOne);
             //this.listenTo(app.stories, 'filter', this.filterAll);
@@ -129,29 +130,23 @@ var app = app || {};
                     0: 'title'
                 },
                 operator: 'OR'
-            }
+            };
 
             app.stories.fetch({
                 reset: true,
                 data: _.extend({}, this.params, { query: query })
             });
 
-            // get all the tweets from the json file
             app.tweets.fetch({
-                reset:true
-            })
+                reset: true
+            });
         },
 
-        render: function () {
-
+        addStories: function() {
+            app.stories.each(this.addStory, this);
         },
 
-        addAll: function() {
-            app.stories.each(this.addOne, this);
-            app.tweets.each(this.addOneTweet, this);
-        },
-
-        addOne: function(story, index) {
+        addStory: function(story, index) {
             var disaster = story.attributes.disaster;
 
             if (disaster && disaster.length) {
@@ -162,7 +157,13 @@ var app = app || {};
             this.$reports.append(reportView.render().el);
         },
 
-        addOneTweet: function(tweet, index) {
+        addTweets: function() {
+            console.log(app.tweets);
+            app.tweets.each(this.addTweet, this);
+        },
+
+        addTweet: function(tweet, index) {
+            // TODO tweets should link
             var tweetView = new app.TweetView({model: tweet});
             this.$tweets.append(tweetView.render().el);
         }
@@ -292,12 +293,6 @@ var app = app || {};
     app.TweetView = Backbone.View.extend({
         tagName: 'div',
         template: _.template($('#tweet-template').html()),
-        events: {
-
-        },
-        initialize: function() {
-
-        },
         render: function() {
             // check for number of model
             this.$el.html(this.template(this.model.toJSON()));
@@ -310,14 +305,6 @@ var app = app || {};
 
         tagName: 'div',
         template: _.template($('#report-template').html()),
-
-        events: {
-        },
-
-        initialize: function() {
-        },
-
-
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
             this.$el.addClass('report medium-6 column');

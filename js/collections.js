@@ -94,11 +94,13 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
     var Tweets = Backbone.Collection.extend({
         model: app.tweet,
-        url:"/data/tweets.json", // this will be switched to a link on the server
+        url: 'https://s3-us-west-2.amazonaws.com/reliefweb/tweets.json',
+        //url: '/data/tweets.json',
         parse: function(resp){
             return resp
         }
     })
+
     var Markers = Backbone.Collection.extend({
         url:'/data/current.geojson',
         parse: function(resp) {
