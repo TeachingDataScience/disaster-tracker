@@ -4,6 +4,14 @@ var app = app || {};
 
     'use strict';
 
+    function getToday() {
+        var date = new Date(),
+            parsed = [date.getMonth() + 1, date.getDate(), date.getFullYear()];
+
+        parsed[0] = parsed[0] < 10 ? '0'.concat(parsed[0]) : parsed[0];
+        return parsed.join('-');
+    }
+
     app.MainStoryView = Backbone.View.extend({
         el: '#main-story',
         initialize: function() {
@@ -89,7 +97,7 @@ var app = app || {};
             this.$reports = this.$('#report-list');
             this.$tweets = this.$('#tweet-list');
 
-            this.listenTo(app.stories, 'reset', this.addStories);
+            this.listenTo(app.stories, 'reset', this.addReports);
             this.listenTo(app.tweets, 'reset', this.addTweets);
 
             app.events.trigger('app:start');
@@ -99,7 +107,8 @@ var app = app || {};
             });
         },
 
-        addStories: function() {
+        addReports: function() {
+            //this.$reports.
             app.stories.each(this.addStory, this);
         },
 
@@ -115,7 +124,6 @@ var app = app || {};
         },
 
         addTweets: function() {
-            console.log(app.tweets);
             app.tweets.each(this.addTweet, this);
         },
 
@@ -140,28 +148,35 @@ var app = app || {};
         },
 
         initialize: function() {
+            // listen for the initial query
+            app.events.once('app:start', this.updateQuery, this);
+
+            // hidden 'advanced search' form els
             this.$below = this.$('#search-options');
             this.$toggle = this.$('#expand-search');
             this.toggled = false;
 
-            app.events.once('app:start', this.newApiSearch, this);
-
-            // call datepicker on our input fields
-            this.$dates = {
-                start: this.$('#datepicker-start'),
-                end: this.$('#datepicker-end')
+            // cache form elements
+            this.$forms = {
+                query:      this.$('#report-query-value'),
+                dateStart:  this.$('#datepicker-start'),
+                dateEnd:    this.$('#datepicker-end'),
+                limit:      this.$('#report-number'),
+                exclude:    this.$('#report-exclude')
             };
 
-            // TODO deal with default
-            _.each(this.$dates, function($date) {
-                $date.fdatepicker({
-                    format: 'mm-dd-yyyy'
-                });
-            });
+            // init datepicker
+            var opts = {format: 'mm-dd-yyyy'};
+            this.$forms.dateStart
+                .val('01-01-2013')
+                .fdatepicker(opts);
+            this.$forms.dateEnd
+                .val(getToday())
+                .fdatepicker(opts);
         },
 
         params: {
-            limit: 30,
+            limit: 20,
             fields: {
                 include: {
                     0: 'body-html',
@@ -183,23 +198,95 @@ var app = app || {};
         },
 
         query: {
-            value: 'haiyan',
+            value: '',
             fields: {
                 0: 'title'
             },
             operator: 'OR'
         },
 
+        filter: {
+            operator: 'AND',
+            conditions: {
+                0: {
+                    field: 'title',
+                    value: '',
+                    negate: true
+                },
+                1: {
+                    field: 'date.created',
+                    value: {
+                        from: '',
+                        to: ''
+                    },
+                }
+            }
+        },
+
         updateQuery: function() {
 
+            var target = '',
+                dateStart,
+                dateEnd;
+
+            // check to make sure there is a query, and it's not a repeat
+            // if no value, default to Haiyan
+            target = this.$forms.query.val();
+            if (target && target !== this.query.value) {
+                this.query.value = target;
+            }
+            else {
+                app.events.trigger('reports-search:error', this.$forms.query);
+                this.query.value = 'Haiyan';
+            }
+
+            // verify there's a limit, if not set to 20
+            target = parseInt(this.$forms.limit.val(), 10);
+            if (!target || target === NaN) {
+                this.params.limit = 20;
+                this.$forms.limit.val('');
+            }
+            else if (target <= 0 || target > 1000) {
+                app.events.trigger('reports-search:error', this.$forms.limit);
+            }
+            else {
+                this.params.limit = target;
+            }
+
+            // is start date later than end date?
+            target = this.$forms.dateStart.val().split('-');
+            dateStart = new Date(target[2], target[1], target[1]).getTime();
+
+            target = this.$forms.dateEnd.val().split('-');
+            dateEnd = new Date(target[2], target[1], target[1]).getTime();
+
+            if (dateEnd < dateStart) {
+                app.events.trigger('reports-search:error', this.$forms.dateEnd);
+            }
+            else {
+                this.filter.conditions[1].value.from = dateStart;
+                this.filter.conditions[1].value.to = dateEnd;
+            }
+
+            // remove any commas from exclude
+            target = this.$forms.exclude.val();
+            if (target) {
+                target = target.replace(/,/g, '');
+                this.filter.conditions[0].value = target;
+            }
+            else {
+                this.filter.conditions[0].value = 'zzzxxxxzzz';
+            }
+
+            this.newApiSearch();
             return false;
         },
 
         newApiSearch: function() {
-            console.log('in start!');
+            console.log(_.extend({}, this.params, { query: this.query, filter: this.filter }));
             app.stories.fetch({
                 reset: true,
-                data: _.extend({}, this.params, { query: this.query })
+                data: _.extend({}, this.params, { query: this.query, filter: this.filter })
             });
         },
 

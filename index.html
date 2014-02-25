@@ -46,7 +46,7 @@
                 <div class="medium-9 column">
                     <div class="row collapse">
                         <div class="small-10 column">
-                            <input type="text" placeholder="eg. 'infrastructure damage'" />
+                            <input type="text" id="report-query-value" placeholder="eg. 'haiyan infrastructure damage'" />
                         </div>
                         <div class="small-2 column">
                             <input type="submit" value="Search" class="button postfix" />
@@ -60,7 +60,7 @@
                     <div id="search-options" class="slider hidden">
                         <div class="medium-2 column">
                             <label># of results</label>
-                            <input type="text" placeholder="1000 max" />
+                            <input id="report-number" type="text" placeholder="1000 max" />
                         </div>
                         <div class="medium-2 column">
                             <label>Start date</label>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="medium-6 column">
                             <label>Exclude these terms</label>
-                            <input type="text" placeholder="" />
+                            <input id="report-exlude" type="text" placeholder="" />
                         </div>
                     </div>
                 </div>
