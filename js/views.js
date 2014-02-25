@@ -58,46 +58,25 @@ var app = app || {};
 
             _.each(featureCollection,function(f){
                 f.properties['marker-size'] = 'small';
-                f.properties['marker-color'] = '#FFF';
+                f.properties['marker-color'] = '#E68080';
                 f.properties.popup = view.template(f);
             });
-
-            //var coords = _.map(featureCollection,function(m){return m.geometry.coordinates});
-            var coords = _.map(featureCollection,function(m){return [m.geometry.coordinates[1],m.geometry.coordinates[0]]}); // LatLng
-            var heatLayer = L.heatLayer(coords,{
-                gradient: {
-                    0.1:"#D86FD0",
-                    1:"#D8A86F"
-                }
-            });
-
-            var markerLayer = new L.MarkerClusterGroup({showCoverageOnHover:false});
-
 
             L.geoJson(featureCollection, {
                 pointToLayer: L.mapbox.marker.style,
                 onEachFeature: function (feature, layer) {
-
                     var brief = L.popup({
-                        closeButton:false,
+                        closeButton: false,
+                        minWidth: 320,
                         offset: new L.Point(0,-20)
-                    }).setContent(feature.properties.popup);
-
-                    layer.on('mouseover',function(){
-                        brief.setLatLng(this.getLatLng());
-                        view.map.openPopup(brief);
-                    }).on('mouseout',function(){
-                        view.map.closePopup(brief);
-                    }).on('click',function(){
-                        return
                     })
-                }
-            }).addTo(markerLayer);
+                    .setContent(feature.properties.popup)
+                    .setLatLng(layer.getLatLng());
 
-            // somehow directly addTo(this.map) will only add individual marker layers
-            this.map
-            .addLayer(heatLayer)
-            .addLayer(markerLayer);
+                    view.map.openPopup(brief);
+                    layer.bindPopup(brief);
+                }
+            }).addTo(this.map);
         }
     });
 
@@ -179,18 +158,22 @@ var app = app || {};
                 // figure out if it's the same disaster we're tracking here
             }
 
-            var view = new app.ReportView({ model: story });
-            this.$reports.append(view.render().el);
+            var reportView = new app.ReportView({ model: story });
+            this.$reports.append(reportView.render().el);
         },
 
+        addOneTweet: function(tweet, index) {
+            var tweetView = new app.TweetView({model: tweet});
+            this.$tweets.append(tweetView.render().el);
+        }
     });
 
     app.ReportSearch = Backbone.View.extend({
         el: '#report-search',
 
         text: {
-            hide: 'Hide search options &#x25B2;',
-            show: 'Show search options &#x25BC;'
+            hide: 'General',
+            show: 'Advanced'
         },
 
         events: {
