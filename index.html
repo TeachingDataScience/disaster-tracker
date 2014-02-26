@@ -38,14 +38,12 @@
             </dl>
         </div>
         <div class='about'>
-            <small>
-                <a href='#'>about</a>
-            </small>
+            <a target='_blank' href='http://reliefweb.int'><img class='logo-rw' src='/img/rw.png'/></a>
         </div>
         <!-- reports -->
         <div class='reports medium-8 column'>
             <a name="reports"></a>
-            <h3 class='medium-6 column' data-magellan-destination="reports">Current Reports: <span>Phillipines</span></h3>
+            <h3 class='medium-6 column' data-magellan-destination="reports">Reports: <span>Phillipines</span></h3>
             <ul id="report-pagination" class="medium-6 column pagination">
                 <li class="arrow prev"><a href="#">&laquo;</a></li>
                 <li class="arrow next"><a href="#">&raquo;</a></li>
@@ -99,12 +97,12 @@
             </div>
         </div>
 
-
-
         <!-- Demographic information -->
-        <div class="demographic medium-12 column">
+        <div class="graph medium-12 column">
             <a name="profiles"></a>
             <h3 class="medium-12 column"  data-magellan-destination="profiles">Country Profile</h3>
+            <div id='demogrphic-graph'>
+            </div>
         </div>
     </div>
 
@@ -127,14 +125,12 @@
         </script>
 
         <script type="text/template" id="tweet-template">
-            <a target='_blank' href='http://twitter.com/<%- user %>'>
-                <div class='report-top'>
-                    <h5><img src='<%- user_image %>'/><%- user %></h5>
+            <a target="_blank" href="http://twitter.com/<%- user %>/status/<%- id_str %>">
+                <div class='report-content'>
+                    <h5 class='dateline'><img src='<%- user_image %>'/><%- user %></h5>
+                    <p><%- text %></p>
                 </div>
             </a>
-            <div class='report-content'>
-                <p class="dateline"><%- text %></p>
-            </div>
         </script>
 
         <script type="text/template" id="pagination-template">

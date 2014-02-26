@@ -17,7 +17,6 @@ p {
   color: #333;
 	}
 h3 {
-  font-size: 1.75em;
   line-height: 1.75em;
 	}
 h3 span {
@@ -57,8 +56,12 @@ input[type="url"],
 textarea {
   border: 1px solid #ccc;
   }
+[class*="column"] + [class*="column"]:last-child {
+  float:left; /*override the last item being right-floated*/
+  }
 [data-magellan-expedition] {
   border-bottom:1px solid #85A9B5;
+  z-index:99;
   }
 [data-magellan-expedition-clone] .sub-nav {
   margin:-0.25rem 0 0.9rem; /* correction for overflown space in the clone*/
@@ -87,9 +90,14 @@ textarea {
 	}
 .about {
   position:fixed;
-  top:0.8em;
+  top:1.2em;
   right:1em;
   z-index:100;
+  font-size:60%;
+  }
+.logo-rw  {
+  margin-top:0.5em;
+  width:50%;
   }
 /* reports */
 #expand-search {
@@ -116,11 +124,6 @@ textarea {
 .report-top {
   padding: 1em;
   background: #e7e7e7;
-  -webkit-transition: background-color 400ms ease-in-out;
-  -moz-transition: background-color 400ms ease-in-out;
-  -o-transition: background-color 400ms ease-in-out;
-  -ms-transition: background-color 400ms ease-in-out;
-  transition: background-color 400ms ease-in-out;
   }
 .report-content {
 	overflow-y:hidden;
@@ -128,6 +131,11 @@ textarea {
 	max-height:11.5em;
   background:#fff;
 	padding:1em;
+  -webkit-transition: background-color 400ms ease-in-out;
+  -moz-transition: background-color 400ms ease-in-out;
+  -o-transition: background-color 400ms ease-in-out;
+  -ms-transition: background-color 400ms ease-in-out;
+  transition: background-color 400ms ease-in-out;
 	}
 .readmore {
   position:absolute;
@@ -140,13 +148,14 @@ textarea {
 .tweet .report-top {
   color:#777;
   }
-.tweet .report-top:hover {
-  background: #b9b9b9;
-  }
 .tweet .report-content {
-  border:1px solid #e7e7e7;
-  min-height:6.5em;
-  max-height:6.5em;
+  background:#f2f2f2;
+  border:1px solid #ddd;
+  min-height:8em;
+  max-height:8em;
+  }
+.tweet .report:hover .report-content{
+  background: #e7e7e7;
   }
 .source {
 	font-style: italic;
