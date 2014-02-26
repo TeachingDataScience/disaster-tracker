@@ -108,7 +108,7 @@ var app = app || {};
         },
 
         addReports: function() {
-            //this.$reports.
+            this.$reports.empty();
             app.stories.each(this.addStory, this);
         },
 
@@ -120,7 +120,7 @@ var app = app || {};
             }
 
             var reportView = new app.ReportView({ model: story });
-            this.$reports.append(reportView.render().el);
+            this.$reports.append(reportView.render().el).fadeIn(200);
         },
 
         addTweets: function() {
@@ -327,7 +327,7 @@ var app = app || {};
         },
 
         render: function() {
-
+            this.$after.empty();
             this.pageInfo = app.stories.pageInfo();
 
             var fragment = new Array(this.pageInfo.pages),
