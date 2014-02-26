@@ -23,6 +23,9 @@ h3 {
 h3 span {
   font-style:italic;
   }
+h5 {
+  font-size: 1em;
+  }
 h6,label {
   font-size: 0.777em;
   line-height: 1em;
@@ -35,6 +38,7 @@ form {
   margin:0;
   }
 label{
+  color:#fff;
   margin-bottom:0.666em;
   }
 input[type="text"],
@@ -54,7 +58,7 @@ textarea {
   border: 1px solid #ccc;
   }
 [data-magellan-expedition] {
-  border-bottom:1px solid #333;
+  border-bottom:1px solid #85A9B5;
   }
 [data-magellan-expedition-clone] .sub-nav {
   margin:-0.25rem 0 0.9rem; /* correction for overflown space in the clone*/
@@ -81,34 +85,42 @@ textarea {
 .map.show {
   opacity: 1;
 	}
-/*main story*/
-#main-story {
-  margin-top:-20%;
-  background:#fff;
-  opacity:0.8;
-  z-index:10;
-  -webkit-transition: all 400ms ease-out;
-  -moz-transition: all 400ms ease-out;
-  -o-transition: all 400ms ease-ou;
-  -ms-transition: all 400ms ease-out;
-  transition: all 400ms ease-out;
-  }
-#main-story.slide-in {
+.about {
+  position:fixed;
+  top:0.8em;
+  right:1em;
+  z-index:100;
   }
 /* reports */
-.reports {
-  background:#85A9B5;
+#expand-search {
+  display: block;
+  position: absolute;
+  top: 4em;
+  right: 1.5em;
+  font-size:60%;
+  color: #fff;
+  }
+#expand-search:hover {
+  text-decoration: underline;
+  }
+.reports h3 {
+  color:#fff;
   }
 .report {
-	padding:0 1em 1.45em;
+	padding:0 1em 1em;
 	}
 .report img {
   width:24px;
-  margin-right:0.2em;
+  margin-right:1em;
   }
 .report-top {
   padding: 1em;
-  background: #DAD6CA;
+  background: #e7e7e7;
+  -webkit-transition: background-color 400ms ease-in-out;
+  -moz-transition: background-color 400ms ease-in-out;
+  -o-transition: background-color 400ms ease-in-out;
+  -ms-transition: background-color 400ms ease-in-out;
+  transition: background-color 400ms ease-in-out;
   }
 .report-content {
 	overflow-y:hidden;
@@ -126,10 +138,15 @@ textarea {
   margin-top:1em;
   }
 .tweet .report-top {
-  background:#ddd;
+  color:#777;
+  }
+.tweet .report-top:hover {
+  background: #b9b9b9;
   }
 .tweet .report-content {
-  border:1px solid #ddd;
+  border:1px solid #e7e7e7;
+  min-height:6.5em;
+  max-height:6.5em;
   }
 .source {
 	font-style: italic;
@@ -140,9 +157,17 @@ textarea {
   font-weight: 200;
   color: #666;
 	}
+ul.pagination {
+  position: absolute;
+  top: 1em;
+  right: -3.5em;
+  }
+ul.pagination li a {
+  color:#fff;
+  }
 ul.pagination li a:hover,
 ul.pagination li.current a {
-  background-color: #008CBA;
+  background-color: #85A9B5;
   -webkit-transition: background-color 400ms ease-in-out;
   -moz-transition: background-color 400ms ease-in-out;
   -o-transition: background-color 400ms ease-in-out;

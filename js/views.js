@@ -172,8 +172,8 @@ var app = app || {};
         el: '#report-search',
 
         text: {
-            hide: 'General',
-            show: 'Advanced'
+            hide: 'Hide',
+            show: 'More Options'
         },
 
         events: {
