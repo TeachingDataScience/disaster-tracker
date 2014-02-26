@@ -285,7 +285,7 @@ var app = app || {};
         },
 
         newApiSearch: function() {
-            console.log(_.extend({}, this.params, { query: this.query, filter: this.filter }));
+            // console.log(_.extend({}, this.params, { query: this.query, filter: this.filter }));
             app.stories.fetch({
                 reset: true,
                 data: _.extend({}, this.params, { query: this.query, filter: this.filter })
@@ -395,7 +395,6 @@ var app = app || {};
     });
 
     app.ReportView = Backbone.View.extend({
-
         tagName: 'div',
         template: _.template($('#report-template').html()),
         render: function() {
