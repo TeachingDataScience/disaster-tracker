@@ -56,13 +56,19 @@ textarea {
 [data-magellan-expedition] {
   border-bottom:1px solid #333;
   }
-.relative {
-  position: relative;
-	}
+[data-magellan-expedition-clone] .sub-nav {
+  margin:-0.25rem 0 0.9rem; /* correction for overflown space in the clone*/
+  }
+.sub-nav dd:first-child{
+  margin-left:2.45em;
+  color:#333;
+  }
 /* map */
 .map,
 .reports {
   height:100%;
+  background:#5491A4;
+  /*margin-top:-0.5em;*/
 	}
 .map {
   /*opacity: 0.2;*/
