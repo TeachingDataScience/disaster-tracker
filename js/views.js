@@ -93,11 +93,11 @@ var app = app || {};
         el: '#disaster-app',
         initialize: function () {
 
-            // model containers
             this.$reports = this.$('#report-list');
             this.$tweets = this.$('#tweet-list');
 
             this.listenTo(app.stories, 'reset', this.addReports);
+            this.listenTo(app.stories, 'reflow', this.addReports);
             this.listenTo(app.tweets, 'reset', this.addTweets);
 
             app.events.trigger('app:start');
@@ -109,7 +109,7 @@ var app = app || {};
 
         addReports: function() {
             this.$reports.empty();
-            app.stories.each(this.addStory, this);
+            _.each(app.stories.getPage(), this.addStory, this);
         },
 
         addStory: function(story, index) {
@@ -124,7 +124,7 @@ var app = app || {};
         },
 
         addTweets: function() {
-            app.tweets.each(this.addTweet, this);
+            _.each(app.tweets.models, this.addTweet, this);
         },
 
         addTweet: function(tweet, index) {
@@ -175,8 +175,10 @@ var app = app || {};
                 .fdatepicker(opts);
         },
 
+        limit: 20,
+
         params: {
-            limit: 20,
+            limit: 0,
             fields: {
                 include: {
                     0: 'body-html',
@@ -243,7 +245,7 @@ var app = app || {};
             // verify there's a limit, if not set to 20
             target = parseInt(this.$forms.limit.val(), 10);
             if (!target || target === NaN) {
-                this.params.limit = 20;
+                this.params.limit = this.limit;
                 this.$forms.limit.val('');
             }
             else if (target <= 0 || target > 1000) {
@@ -327,7 +329,9 @@ var app = app || {};
         },
 
         render: function() {
-            this.$after.empty();
+            // remove the old pagination items
+            this.$('.pagination-item').remove();
+
             this.pageInfo = app.stories.pageInfo();
 
             var fragment = new Array(this.pageInfo.pages),

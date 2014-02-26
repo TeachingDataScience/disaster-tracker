@@ -27,9 +27,7 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
             this.total = models.length;
 
-            var paginated = models.slice(this.page * this.perPage, this.perPage);
-
-            return _.map(paginated, function(model) {
+            return _.map(models, function(model) {
                 var fields = model.fields,
 
                     // truncate the body to 300 characters
@@ -42,6 +40,13 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
                     return _.extend({}, fields, {lead: lead, dateline: dateline});
             }, this);
+        },
+
+        getPage: function() {
+            var start = this.page * this.perPage,
+                end = start + this.perPage;
+            end = (end < this.total) ? end : this.total;
+            return this.models.slice(start, end);
         },
 
         getDate: function(date) {
@@ -67,6 +72,7 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         nextPage: function() {
             if (this.page < this.pageInfo().pages - 1) {
                 this.page = this.page + 1;
+                console.log(this.page);
                 this.trigger('reflow');
             }
             return false;
@@ -75,6 +81,7 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         previousPage: function() {
             if (this.page >= 1) {
                 this.page = this.page - 1;
+                console.log(this.page);
                 this.trigger('reflow');
             }
             return false;
@@ -82,14 +89,10 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
         jump: function(toPage) {
             this.page = toPage;
+            console.log(this.page);
             this.trigger('reflow');
             return false;
-        },
-
-        sort: function(keyword) {
-
-        },
-
+        }
     });
 
     var Tweets = Backbone.Collection.extend({
