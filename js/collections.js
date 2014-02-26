@@ -99,19 +99,18 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         model: app.tweet,
         url: 'https://s3-us-west-2.amazonaws.com/reliefweb/tweets.json',
         //url: '/data/tweets.json',
-        parse: function(resp){
-            return resp
-        }
-    })
+    });
 
     var Markers = Backbone.Collection.extend({
-        url:'/data/current.geojson',
-        parse: function(resp) {
-            return resp
-        }
-    })
+        url:'/data/current.geojson'
+    });
+
+    var Historical = Backbone.Collection.extend({
+        url: '/data/ph-disasters-annual.json'
+    });
 
     app.stories = new Stories();
     app.tweets = new Tweets();
     app.markers = new Markers();
+    app.historical = new Historical();
 })();
