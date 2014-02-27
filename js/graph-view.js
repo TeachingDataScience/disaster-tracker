@@ -8,7 +8,7 @@ var app = app || {};
         el: '#historical-chart',
 
         margin: {
-            top             : 40,
+            top             : 20,
             right           : 10,
             bottom          : 20,
             left            : 10
@@ -18,8 +18,6 @@ var app = app || {};
         height      : 600,
         x           : d3.scale.ordinal(),
         y           : d3.scale.linear(),
-        xAx         : d3.svg.axis(),
-        yAx         : d3.svg.axis(),
 
         set         : [],
         start       : 1940,
@@ -49,6 +47,7 @@ var app = app || {};
             this.x.domain(d3.range(this.start, this.end))
                 .rangeRoundBands([0, this.width], .08);
 
+            console.log(this.height);
             this.y.range([this.height, 0]);
 
         },
@@ -68,13 +67,22 @@ var app = app || {};
             var y = this.y,
                 x = this.x;
 
+            var xAx = d3.svg.axis()
+                .scale(x)
+                .tickSize(0)
+                .tickPadding(6)
+                .orient('bottom');
+
             _.each(this.set, function(year) {
                 _.reduce(year, function(memo, model) {
+                    console.log(memo + ' ' + model.attributes.no_killed);
                     model.attributes.y = y(model.attributes.no_killed + parseInt(memo, 10));
                     model.attributes.y0 = y(model.attributes.no_killed);
                     return memo + model.attributes.no_killed;
                 }, 0);
             });
+
+            console.log(y(10));
 
             var layer = this.svg.selectAll('layer')
                 .data(this.set)
@@ -90,7 +98,6 @@ var app = app || {};
                 .attr('height', 0)
                 .attr('class', function(d) {
                     var cls = d.attributes.dis_type.split(' ');
-                    console.log(cls[0]);
                     return cls[0].toLowerCase();
                 });
 
@@ -98,6 +105,13 @@ var app = app || {};
                 .delay(function(d, i) { return i * 10; })
                 .attr('y', function(d) { return d.attributes.y })
                 .attr('height', function(d) { return d.attributes.y0 });
+
+            /*
+            this.svg.append('g')
+                .attr('class', 'x axis')
+                .attr('transform', 'translate(0,' + this.height + ')')
+                .call(xAx);
+            */
         }
 
     });
