@@ -9,7 +9,7 @@ var app = app || {};
 
         margin: {
             top             : 20,
-            right           : 10,
+            right           : 40,
             bottom          : 20,
             left            : 10
         },
@@ -47,7 +47,6 @@ var app = app || {};
             this.x.domain(d3.range(this.start, this.end))
                 .rangeRoundBands([0, this.width], .08);
 
-            console.log(this.height);
             this.y.range([this.height, 0]);
 
         },
@@ -58,6 +57,7 @@ var app = app || {};
 
             var max = d3.max(_.map(this.set, function(year) {
                 return _.reduce(year, function(memo, model) {
+                    model.attributes.y0 = parseInt(memo, 10);
                     return memo + model.attributes.no_killed;
                 }, 0);
             }));
@@ -71,18 +71,17 @@ var app = app || {};
                 .scale(x)
                 .tickSize(0)
                 .tickPadding(6)
-                .orient('bottom');
+                .orient('bottom')
+                .tickFormat(function(d) {
+                    return d % 10 === 0 ? d : '';
+                });
 
-            _.each(this.set, function(year) {
-                _.reduce(year, function(memo, model) {
-                    console.log(memo + ' ' + model.attributes.no_killed);
-                    model.attributes.y = y(model.attributes.no_killed + parseInt(memo, 10));
-                    model.attributes.y0 = y(model.attributes.no_killed);
-                    return memo + model.attributes.no_killed;
-                }, 0);
-            });
-
-            console.log(y(10));
+            var yAx = d3.svg.axis()
+                .scale(y)
+                .tickSize(0)
+                .tickPadding(6)
+                .ticks(4)
+                .orient('right');
 
             var layer = this.svg.selectAll('layer')
                 .data(this.set)
@@ -93,27 +92,24 @@ var app = app || {};
                 .data(function(d) { return d })
               .enter().append('rect')
                 .attr('x', function(d) { return x(parseInt(d.attributes.year, 10)) })
-                .attr('y', this.height)
+                .attr('y', function(d) { return y(d.attributes.y0 + d.attributes.no_killed) })
                 .attr('width', x.rangeBand())
-                .attr('height', 0)
+                .attr('height', function(d) { return y(d.attributes.y0) - y(d.attributes.y0 + d.attributes.no_killed) })
                 .attr('class', function(d) {
                     var cls = d.attributes.dis_type.split(' ');
                     return cls[0].toLowerCase();
                 });
 
-            rect.transition()
-                .delay(function(d, i) { return i * 10; })
-                .attr('y', function(d) { return d.attributes.y })
-                .attr('height', function(d) { return d.attributes.y0 });
-
-            /*
             this.svg.append('g')
                 .attr('class', 'x axis')
                 .attr('transform', 'translate(0,' + this.height + ')')
                 .call(xAx);
-            */
-        }
 
+            this.svg.append('g')
+                .attr('class', 'y axis')
+                .attr('transform', 'translate(' + this.width + ',0)')
+                .call(yAx);
+        }
     });
 
     app.historicalGraph = new GraphView();

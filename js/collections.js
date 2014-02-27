@@ -27,6 +27,8 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
             this.total = models.length;
 
+            this.page = 0;
+
             return _.map(models, function(model) {
                 var fields = model.fields,
 

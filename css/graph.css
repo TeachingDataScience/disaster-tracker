@@ -1,5 +1,12 @@
 rect {
     fill: #FFF;
+    stroke: #FFF;
+    stroke-width: 1px;
+}
+
+text {
+    font-size: 12px;
+    color: #333;
 }
 
 .legend > span {
@@ -69,4 +76,9 @@ rect {
 }
 .mass:before {
     background-color: #ff9bd9;
+}
+
+.spacer {
+    text-transform: capitalize;
+    padding-bottom: 20px;
 }
