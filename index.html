@@ -106,6 +106,8 @@
             <a name="profiles"></a>
             <h3 class="medium-12 column"  data-magellan-destination="profiles">Country Profile</h3>
 
+            <div id="demographic-chart" class="medium-2 column"></div>
+
             <div class="medium-10 medium-centered column legend">
                 <span class="storm">Storm</span>
                 <span class="flood">Flood</span>
@@ -115,8 +117,7 @@
                 <span class="volcano">Volcano</span>
                 <span class="mass">Mass migration</span>
             </div>
-
-            <div id="historical-chart"></div>
+            <div id="historical-chart" class="medium-10 column"></div>
         </div>
     </div>
 
@@ -163,13 +164,13 @@
         </script>
 
 
-        <script type="text/template" id="graph-template">
-            <h3><%- name %></h3>
+        <script type="text/template" id="demo-template">
+            <h6><%- name %></h6>
             <p>2012 Total Population: <%- _2012_population %></p>
             <p>2012 Urban Population: <%- _2012_urban_population %></p>
         </script>
 
-        <script type="text/template" id="graph0-template">
+        <script type="text/template" id="demo0-template">
             <p>2012 Life Expectancy at Birth: <%- _2012_life_expectancy_at_birth%></p>
         </script>
 

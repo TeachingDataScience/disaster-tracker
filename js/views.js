@@ -95,12 +95,13 @@ var app = app || {};
 
             this.$reports = this.$('#report-list');
             this.$tweets = this.$('#tweet-list');
-            this.$graph = this.$('#graph');
-            this.$graph0 = this.$('#graph0')
+            this.$demo = this.$('#demographic-chart');
 
             this.listenTo(app.stories, 'reset', this.addReports);
             this.listenTo(app.stories, 'reflow', this.addReports);
             this.listenTo(app.tweets, 'reset', this.addTweets);
+            this.listenTo(app.demographics, 'reset', this.addAllDemo);
+            this.listenTo(app.demographics0, 'reset', this.addAllDemo);
 
             app.events.trigger('app:start');
 
@@ -111,7 +112,6 @@ var app = app || {};
             //this.listenTo(app.stories, 'filter', this.filterAll);
             //this.listenTo(app.stories, 'all', this.render);
 
-            this.listenTo(app.demographics,'reset',this.addAllDemographic);
 
             var query = {
                 value: 'haiyan',
@@ -128,7 +128,6 @@ var app = app || {};
                 data: _.extend({}, this.params, { query: query })
             });
 
-            // get all the tweets from the json file
             app.tweets.fetch({
                 reset:true
             })
@@ -163,28 +162,32 @@ var app = app || {};
         },
 
         addTweet: function(tweet, index) {
-            // TODO tweets should link
             var tweetView = new app.TweetView({model: tweet});
             this.$tweets.append(tweetView.render().el);
         },
 
-        addAllDemographic: function(){
-            app.demographics.each(this.addGraph, this);
-            // app.demographics0.each(this.addGraph0, this);
+        addAllDemo: function(){
+            this.$demo.empty(); // clear out previous rendered view since this is run twice (being listened to by two collections)
+            var demoView, demoView0;
 
-            var graphView = new app.GraphView({model: this.graph});
-            // var graphView0 = new app.GraphView0({model: this.graph0});
+            app.demographics.each(this.addDemo, this);
+            app.demographics0.each(this.addDemo0, this);
 
-            this.$graph.append(graphView.render().el);
-            // this.$graph.append(graphView0.render().el);
+            if (app.demographics.length > 0){
+                demoView = new app.DemoView({model: this.demo});
+                this.$demo.append(demoView.render().el);
+            }
+            if (app.demographics0.length > 0){
+                demoView0 = new app.DemoView0({model: this.demo0});
+                this.$demo.append(demoView0.render().el);
+            }
         },
 
-        addGraph: function(){
-            this.graph = app.demographics.findWhere({'country_code':this.country});
+        addDemo: function(){
+            this.demo = app.demographics.findWhere({'country_code':this.country});
         },
-        addGraph0: function(){
-            debugger
-            this.graph0 = app.demographics0.findWhere({'abbreviation':this.country});
+        addDemo0: function(){
+            this.demo0 = app.demographics0.findWhere({'abbreviation':this.country});
         }
 
     });
@@ -459,33 +462,19 @@ var app = app || {};
 
     });
 
-    app.GraphView = Backbone.View.extend({
+    app.DemoView = Backbone.View.extend({
         tagName:'div',
-        template: _.template($('#graph-template').html()),
-        events: {
-
-        },
-        initialize: function() {
-
-        },
+        template: _.template($('#demo-template').html()),
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
-            this.$el.addClass('report medium-4 column')
             return this
         }
     }),
-    app.GraphView0 = Backbone.View.extend({
+    app.DemoView0 = Backbone.View.extend({
         tagName:'div',
-        template: _.template($('#graph0-template').html()),
-        events: {
-
-        },
-        initialize: function() {
-
-        },
+        template: _.template($('#demo0-template').html()),
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
-            this.$el.addClass('report medium-4 column')
             return this
         }
     })
