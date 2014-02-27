@@ -4,13 +4,13 @@ body,
   height: 100vh;
 	}
 h1,
-h3{
+h3,
+h5{
   font-family: 'Georgia', Times, "Times New Roman", serif;
   color: #333;
 	}
 h2,
 h4,
-h5,
 h6,
 p {
   font-family: 'Lato', "Helvetica Neue", "Helvetica", Arial, sans-serif;
@@ -199,3 +199,16 @@ ul.pagination li.current a {
   width: 100%;
   opacity: 0;
 	}
+/* country profiles */
+.graph h5 {
+  color:#777;
+  margin:1em 0;
+  }
+.demographic table {
+  width:100%;
+  height:8em;
+  }
+.data-source:before {
+  content: "Source: ";
+  padding-left:1.2em;
+}
