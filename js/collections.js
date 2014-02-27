@@ -104,11 +104,11 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
     });
 
     var Markers = Backbone.Collection.extend({
-        url:'/data/current.geojson'
+        url:'data/current.geojson'
     });
 
     var Historical = Backbone.Collection.extend({
-        url: '/data/ph-disasters-all.json',
+        url: 'data/ph-disasters-all.json',
         entitles: [],
         parse: function(resp) {
 
