@@ -14,7 +14,7 @@ var app = app || {};
             left            : 10
         },
 
-        width       : 820,
+        width       : 800,
         height      : 300,
         x           : d3.scale.ordinal(),
         y           : d3.scale.linear(),
