@@ -72,7 +72,6 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         nextPage: function() {
             if (this.page < this.pageInfo().pages - 1) {
                 this.page = this.page + 1;
-                console.log(this.page);
                 this.trigger('reflow');
             }
             return false;
@@ -81,7 +80,6 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         previousPage: function() {
             if (this.page >= 1) {
                 this.page = this.page - 1;
-                console.log(this.page);
                 this.trigger('reflow');
             }
             return false;
@@ -89,7 +87,6 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
         jump: function(toPage) {
             this.page = toPage;
-            console.log(this.page);
             this.trigger('reflow');
             return false;
         }
@@ -99,6 +96,9 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         model: app.tweet,
         url: 'https://s3-us-west-2.amazonaws.com/reliefweb/tweets.json',
         //url: '/data/tweets.json',
+        parse: function(resp) {
+            return resp.slice(0, 12);
+        }
     });
 
     var Markers = Backbone.Collection.extend({
@@ -106,7 +106,27 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
     });
 
     var Historical = Backbone.Collection.extend({
-        url: '/data/ph-disasters-annual.json'
+        url: '/data/ph-disasters-all.json',
+        entitles: [],
+        parse: function(resp) {
+
+            this.entities = _.chain(resp)
+                .groupBy(function(obj) { return obj.dis_type })
+                .keys().value();
+
+            return resp;
+        },
+
+        yearsFrom: function(start) {
+            var years = _.chain(this.models)
+                .groupBy(function(model) { return model.attributes.year })
+                .toArray()
+                .filter(function(year) {
+                    return parseInt(year[0].attributes.year, 10) >= start
+                })
+                .value();
+            return years;
+        }
     });
 
     app.stories = new Stories();

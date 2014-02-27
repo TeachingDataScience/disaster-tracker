@@ -46,11 +46,7 @@ h6 {
 .deep-space {
   margin: 3em 0 3.445em;
 }
-.report {
-  margin: 12px 0 20px;
-}
 .source {
-  text-transform: uppercase;
   color: #666;
   margin: 0 0 0.6775em;
 }
@@ -109,4 +105,10 @@ ul.pagination li.current a {
 }
 #main-story.slide-in {
   right: 0;
+}
+rect {
+  fill: #FFF;
+}
+.storm {
+  fill: #5191A5;
 }

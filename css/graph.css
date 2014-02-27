@@ -1,0 +1,67 @@
+rect {
+    fill: #FFF;
+}
+
+.legend > span {
+    display: inline-block;
+    position: relative;
+    margin-left: 2.2em;
+}
+
+.legend > span:before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    position: absolute;
+    left: -1.4em;
+}
+
+.storm {
+    fill: #5191A5;
+}
+.storm:before {
+    background-color: #5191A5;
+}
+
+.flood {
+    fill: #555567;
+}
+.flood:before {
+    background-color: #555567;
+}
+
+.earthquake {
+    fill: #ff914e;
+}
+.earthquake:before {
+    background-color: #ff914e;
+}
+
+.epidemic {
+    fill: #ff4e64;
+}
+.epidemic:before {
+    background-color: #ff4e64;
+}
+
+.drought {
+    fill: #4eff91;
+}
+.drought:before {
+    background-color: #4eff91;
+}
+
+.volcano {
+    fill: #cccccc;
+}
+.volcano:before {
+    background-color: #cccccc;
+}
+
+.mass {
+    fill: #ff9bd9;
+}
+.mass:before {
+    background-color: #ff9bd9;
+}
