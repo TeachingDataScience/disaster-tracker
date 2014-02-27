@@ -179,7 +179,7 @@ var app = app || {};
             }
             if (app.demographics0.length > 0){
                 demoView0 = new app.DemoView0({model: this.demo0});
-                this.$demo.append(demoView0.render().el);
+                this.$demo.find('table').append(demoView0.render().el);
             }
         },
 
@@ -471,7 +471,7 @@ var app = app || {};
         }
     }),
     app.DemoView0 = Backbone.View.extend({
-        tagName:'div',
+        tagName:'tr',
         template: _.template($('#demo0-template').html()),
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
