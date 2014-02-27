@@ -107,17 +107,33 @@
             <h3 class="medium-12 column" data-magellan-destination="profiles">Country Profile</h3>
             <h5 class="medium-12 column spacer">People killed in disasters, per year</h5>
 
-            <div class="medium-10 medium-centered column legend">
-                <span class="storm">Storm</span>
-                <span class="flood">Flood</span>
-                <span class="earthquake">Earthquake</span>
-                <span class="epidemic">Epidemic</span>
-                <span class="drought">Drought</span>
-                <span class="volcano">Volcano</span>
-                <span class="mass">Mass migration</span>
+            <div class="demographic medium-4 column">
+                <h5>Phillipines Demographic 
+                    <small class='data-source'> 
+                        <a target="_blank" href="http://hdr.undp.org/en/data/api">UNDP</a>
+                    </small>
+                </h5>
+                <div id="demographic-chart" class=""></div>
             </div>
-
-            <div id="historical-chart"></div>
+            <div class="historical medium-8 column">
+                <h5>Historical Disasters
+                    <small class='data-source'>
+                    <a target="_blank" href="http://www.emdat.be">
+                        EM-DAT: The OFDA/CRED International Disaster Database - www.emdat.be, Universit&eacute; Catholique de Louvain, Brussels (Belgium)
+                    </a>
+                    </small>
+                </h5>
+                <div class="medium-12 medium-centered column legend">
+                    <span class="storm">Storm</span>
+                    <span class="flood">Flood</span>
+                    <span class="earthquake">Earthquake</span>
+                    <span class="epidemic">Epidemic</span>
+                    <span class="drought">Drought</span>
+                    <span class="volcano">Volcano</span>
+                    <span class="mass">Mass migration</span>
+                </div>
+                <div id="historical-chart" class="medium-12 column"></div>
+            </div>
         </div>
     </div>
 
@@ -164,14 +180,22 @@
         </script>
 
 
-        <script type="text/template" id="graph-template">
-            <h3><%- name %></h3>
-            <p>2012 Total Population: <%- _2012_population %></p>
-            <p>2012 Urban Population: <%- _2012_urban_population %></p>
+        <script type="text/template" id="demo-template">
+            <table>
+                <tr>
+                    <td>Total Population</td>
+                    <td class='demo-num'><%- _2012_population %>M</td>
+                </tr>
+                <tr>
+                    <td>Urban Population</td>
+                    <td class='demo-num'><%- _2012_urban_population %>M</td>
+                </tr>
+            </table>
         </script>
 
-        <script type="text/template" id="graph0-template">
-            <p>2012 Life Expectancy at Birth: <%- _2012_life_expectancy_at_birth%></p>
+        <script type="text/template" id="demo0-template">
+            <td>Life Expectancy at Birth</td>
+            <td class='demo-num'><%- _2012_life_expectancy_at_birth%></td>
         </script>
 
     </div>
