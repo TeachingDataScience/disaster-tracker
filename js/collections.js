@@ -105,8 +105,23 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
             return resp
         }
     })
+    var Demographic = Backbone.Collection.extend({
+        url:'http://data.undp.org/resource/e6xu-b22v.json',
+        parse:function(resp){
+            return resp
+        }
+    });
+    var Demographic0 = Backbone.Collection.extend({
+        url:'http://data.undp.org/resource/wxub-qc5k.json',
+        parse:function(resp){
+            return resp
+        }
+    });
 
     app.stories = new Stories();
     app.tweets = new Tweets();
     app.markers = new Markers();
+
+    app.demographics = new Demographic();
+    app.demographics0 = new Demographic0();
 })();

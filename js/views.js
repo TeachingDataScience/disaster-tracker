@@ -114,6 +114,8 @@ var app = app || {};
 
             this.$reports = this.$('#report-list');
             this.$tweets = this.$('#tweet-list');
+            this.$graph = this.$('#graph');
+            this.$graph0 = this.$('#graph0')
 
             //this.listenTo(app.stories, 'add', this.addOne);
 
@@ -123,6 +125,8 @@ var app = app || {};
             //this.listenTo(app.stories, 'filter', this.filterAll);
             //this.listenTo(app.stories, 'all', this.render);
 
+            this.listenTo(app.demographics,'reset',this.addAllDemographic);
+
             var query = {
                 value: 'haiyan',
                 fields: {
@@ -131,6 +135,8 @@ var app = app || {};
                 operator: 'OR'
             }
 
+            this.country = 'PHL';
+
             app.stories.fetch({
                 reset: true,
                 data: _.extend({}, this.params, { query: query })
@@ -138,6 +144,14 @@ var app = app || {};
 
             // get all the tweets from the json file
             app.tweets.fetch({
+                reset:true
+            })
+
+            app.demographics.fetch({
+                reset:true
+            });
+
+            app.demographics0.fetch({
                 reset:true
             })
         },
@@ -165,7 +179,27 @@ var app = app || {};
         addOneTweet: function(tweet, index) {
             var tweetView = new app.TweetView({model: tweet});
             this.$tweets.append(tweetView.render().el);
+        },
+
+        addAllDemographic: function(){
+            app.demographics.each(this.addGraph, this);
+            // app.demographics0.each(this.addGraph0, this);
+
+            var graphView = new app.GraphView({model: this.graph});
+            // var graphView0 = new app.GraphView0({model: this.graph0});
+
+            this.$graph.append(graphView.render().el);
+            // this.$graph.append(graphView0.render().el);
+        },
+
+        addGraph: function(){
+            this.graph = app.demographics.findWhere({'country_code':this.country});
+        },
+        addGraph0: function(){
+            debugger
+            this.graph0 = app.demographics0.findWhere({'abbreviation':this.country});
         }
+
     });
 
     app.ReportSearch = Backbone.View.extend({
@@ -299,7 +333,6 @@ var app = app || {};
 
         },
         render: function() {
-            // check for number of model
             this.$el.html(this.template(this.model.toJSON()));
             this.$el.addClass('report medium-4 column')
             return this
@@ -326,5 +359,35 @@ var app = app || {};
 
     });
 
+    app.GraphView = Backbone.View.extend({
+        tagName:'div',
+        template: _.template($('#graph-template').html()),
+        events: {
+
+        },
+        initialize: function() {
+
+        },
+        render: function() {
+            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.addClass('report medium-4 column')
+            return this
+        }
+    }),
+    app.GraphView0 = Backbone.View.extend({
+        tagName:'div',
+        template: _.template($('#graph0-template').html()),
+        events: {
+
+        },
+        initialize: function() {
+
+        },
+        render: function() {
+            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.addClass('report medium-4 column')
+            return this
+        }
+    })
 
 })(jQuery);
