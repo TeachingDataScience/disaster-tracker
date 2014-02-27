@@ -473,7 +473,8 @@ var app = app || {};
             this.$el.addClass('report medium-4 column')
             return this
         }
-    }),
+    });
+
     app.GraphView0 = Backbone.View.extend({
         tagName:'div',
         template: _.template($('#graph0-template').html()),
@@ -488,6 +489,6 @@ var app = app || {};
             this.$el.addClass('report medium-4 column')
             return this
         }
-    })
+    });
 
 })(jQuery);
