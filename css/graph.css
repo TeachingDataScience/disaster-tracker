@@ -17,6 +17,11 @@ rect {
     left: -1.4em;
 }
 
+#historical-chart {
+    width: 1000px;
+    margin: 0 auto;
+}
+
 .storm {
     fill: #5191A5;
 }
