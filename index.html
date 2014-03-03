@@ -28,8 +28,8 @@
             <dl class="sub-nav">
                 <dd>You are currently viewing</dd>
                 <dd data-magellan-arrival="reports"><a href="#reports">Disaster Reports</a></dd>
-                <dd data-magellan-arrival="tweets"><a href="#tweets">Related Tweets</a></dd>
                 <dd data-magellan-arrival="profiles"><a href="#profiles">Country Profile</a></dd>
+                <dd data-magellan-arrival="tweets"><a href="#tweets">Related Tweets</a></dd>
             </dl>
         </div>
         <div class='about'>
@@ -87,15 +87,6 @@
         <!-- map -->
         <div id= "app-map" class="medium-4 column map"></div>
 
-        <!-- tweets -->
-        <div class="tweet medium-12 column">
-            <a name="tweets"></a>
-            <h3 class="medium-12 column" data-magellan-destination="tweets">Related Tweets</h3>
-            <div id="tweet-list">
-            <!-- tweet cards here -->
-            </div>
-        </div>
-
         <div class="graph medium-12 column">
             <a name="profiles"></a>
             <h3 class="medium-12 column" data-magellan-destination="profiles">Country Profile</h3>
@@ -128,11 +119,23 @@
                             <span class="volcano">Volcano</span>
                             <span class="mass">Mass migration</span>
                         </div>
-                        <div id="historical-chart"></div>
+                        <div id="historical-chart">
+                            <!-- historical chart -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- tweets -->
+        <div class="tweet medium-12 column">
+            <a name="tweets"></a>
+            <h3 class="medium-12 column" data-magellan-destination="tweets">Related Tweets</h3>
+            <div id="tweet-list">
+            <!-- tweet cards here -->
+            </div>
+        </div>
+
     </div>
 
     <!-- templates -->
