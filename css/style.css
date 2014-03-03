@@ -79,6 +79,7 @@ textarea {
 	}
 .map {
   /*opacity: 0.2;*/
+  margin-top:45px;
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
   -o-transition: opacity 1s;
