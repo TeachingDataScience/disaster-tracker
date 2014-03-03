@@ -21,12 +21,6 @@
     <link rel="stylesheet" type="text/css" href="css/graph.css" />
     <!-- call modernizr -->
     <script src="lib/modernizr/modernizr.js"></script>
-    <script>
-        // redirect on load
-         if (window.location.hash === ""){
-            window.location.href = window.location.origin + "/" + "#reports";
-         }
-    </script>
 </HEAD>
 <BODY>
     <div id="disaster-app" class="tall">
@@ -207,6 +201,7 @@
 
     <script>
         $(document).foundation();
+        $('.sub-nav dd').first().next().addClass('active');
     </script>
 
     <script type="text/javascript" src="lib/underscore/underscore-1.5.2.js"></script>
