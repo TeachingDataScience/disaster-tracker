@@ -105,6 +105,10 @@ var app = app || {};
 
             app.events.trigger('app:start');
 
+            app.tweets.fetch({
+                reset: true
+            });
+
             var query = {
                 value: 'haiyan',
                 fields: {
@@ -114,15 +118,6 @@ var app = app || {};
             }
 
             this.country = 'PHL';
-
-            app.stories.fetch({
-                reset: true,
-                data: _.extend({}, this.params, { query: query })
-            });
-
-            app.tweets.fetch({
-                reset:true
-            })
 
             app.demographics.fetch({
                 reset:true
@@ -140,10 +135,6 @@ var app = app || {};
 
         addStory: function(story, index) {
             var disaster = story.attributes.disaster;
-
-            if (disaster && disaster.length) {
-                // figure out if it's the same disaster we're tracking here
-            }
 
             var reportView = new app.ReportView({ model: story });
             this.$reports.append(reportView.render().el).fadeIn(200);
@@ -461,7 +452,8 @@ var app = app || {};
             this.$el.html(this.template(this.model.toJSON()));
             return this
         }
-    }),
+    });
+
     app.DemoView0 = Backbone.View.extend({
         tagName:'tr',
         template: _.template($('#demo0-template').html()),
@@ -469,6 +461,6 @@ var app = app || {};
             this.$el.html(this.template(this.model.toJSON()));
             return this
         }
-    })
+    });
 
 })(jQuery);

@@ -104,11 +104,11 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
     });
 
     var Markers = Backbone.Collection.extend({
-        url:'/data/current.geojson'
+        url:'data/current.geojson'
     });
 
     var Historical = Backbone.Collection.extend({
-        url: '/data/ph-disasters-all.json',
+        url: 'data/ph-disasters-all.json',
         entitles: [],
         parse: function(resp) {
 
@@ -133,16 +133,10 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
     var Demographic = Backbone.Collection.extend({
         url:'http://data.undp.org/resource/e6xu-b22v.json',
-        parse:function(resp){
-            return resp
-        }
     });
 
     var Demographic0 = Backbone.Collection.extend({
         url:'http://data.undp.org/resource/wxub-qc5k.json',
-        parse:function(resp){
-            return resp
-        }
     });
 
     app.stories = new Stories();
