@@ -75,20 +75,8 @@ textarea {
 .reports {
   height:100%;
   background:#5491A4;
-  /*margin-top:-0.5em;*/
-	}
-.map {
-  /*opacity: 0.2;*/
   margin-top:45px;
-  -webkit-transition: opacity 1s;
-  -moz-transition: opacity 1s;
-  -o-transition: opacity 1s;
-  -ms-transition: opacity 1s;
-  transition: opacity 1s;
-	}
-.map.show {
-  opacity: 1;
-	}
+}
 .about {
   position:fixed;
   top:1.2em;
