@@ -29,11 +29,6 @@ text {
     left: -1.4em;
 }
 
-#historical-chart {
-    width: 100%;
-    margin: 0 auto;
-}
-
 .storm {
     fill: #5191A5;
 }
@@ -81,9 +76,4 @@ text {
 }
 .mass:before {
     background-color: #ff9bd9;
-}
-
-.spacer {
-    text-transform: capitalize;
-    padding-bottom: 20px;
 }
