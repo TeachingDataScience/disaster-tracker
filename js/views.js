@@ -105,14 +105,6 @@ var app = app || {};
 
             app.events.trigger('app:start');
 
-            app.tweets.fetch({
-                reset: true
-            });
-            //this.listenTo(app.stories, 'change:completed', this.filterOne);
-            //this.listenTo(app.stories, 'filter', this.filterAll);
-            //this.listenTo(app.stories, 'all', this.render);
-
-
             var query = {
                 value: 'haiyan',
                 fields: {
