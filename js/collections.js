@@ -98,9 +98,6 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         model: app.tweet,
         url: 'https://s3-us-west-2.amazonaws.com/reliefweb/tweets.json',
         //url: '/data/tweets.json',
-        parse: function(resp) {
-            return resp.slice(0, 12);
-        }
     });
 
     var Markers = Backbone.Collection.extend({
