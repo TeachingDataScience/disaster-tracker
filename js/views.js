@@ -125,7 +125,7 @@ var app = app || {};
 
             app.demographics0.fetch({
                 reset:true
-            })
+            });
         },
 
         addReports: function() {
