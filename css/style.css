@@ -74,7 +74,7 @@ textarea {
 .map,
 .reports {
   height:100%;
-  background:#5491A4;
+  /*background:#5491A4;*/
   margin-top:45px;
 }
 .about {
@@ -101,7 +101,7 @@ textarea {
   text-decoration: underline;
   }
 .reports h3 {
-  color:#fff;
+  color:#333;
   }
 .report {
 	padding:0 1em 1em;
@@ -115,17 +115,13 @@ textarea {
   background: #e7e7e7;
   }
 .report-content {
-	overflow-y:hidden;
+  overflow-y:hidden;
   min-height:11.5em;
-	max-height:11.5em;
+  max-height:11.5em;
   background:#fff;
-	padding:1em;
-  -webkit-transition: background-color 400ms ease-in-out;
-  -moz-transition: background-color 400ms ease-in-out;
-  -o-transition: background-color 400ms ease-in-out;
-  -ms-transition: background-color 400ms ease-in-out;
-  transition: background-color 400ms ease-in-out;
-	}
+  padding:1em;
+  border: 1px solid #e7e7e7;
+}
 .readmore {
   position:absolute;
   left:inherit;
@@ -159,9 +155,6 @@ ul.pagination {
   position: absolute;
   top: 1em;
   right: -3.5em;
-  }
-ul.pagination li a {
-  color:#fff;
   }
 ul.pagination li a:hover,
 ul.pagination li.current a {
