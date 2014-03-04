@@ -236,6 +236,7 @@ var app = app || {};
                     11: 'vulnerable_groups',
                     12: 'headline',
                     13: 'language',
+                    14: 'format'
                 }
             }
         },
@@ -251,20 +252,41 @@ var app = app || {};
         filter: {
             operator: 'AND',
             conditions: {
+
+                // keywords to exclude
                 0: {
                     field: 'title',
                     value: '',
                     negate: true
                 },
+
+                // date ranges
                 1: {
                     field: 'date.created',
                     value: {
                         from: '',
                         to: ''
                     },
+                },
+
+                // removing formats we don't want
+                2: {
+                    field: 'format.name',
+                    value: {
+                        0: 'News and Press',
+                        1: 'Infographic',
+                        2: 'Map'
+                    },
+                    operator: 'OR',
+                    negate: true
                 }
             }
         },
+
+        sort: {
+            0: 'date:desc'
+        },
+
 
         updateQuery: function() {
 
@@ -329,7 +351,11 @@ var app = app || {};
             // console.log(_.extend({}, this.params, { query: this.query, filter: this.filter }));
             app.stories.fetch({
                 reset: true,
-                data: _.extend({}, this.params, { query: this.query, filter: this.filter })
+                data: _.extend({}, this.params, {
+                    query: this.query,
+                    filter: this.filter,
+                    sort: this.sort
+                })
             });
         },
 

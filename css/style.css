@@ -74,6 +74,7 @@ textarea {
 .map,
 .reports {
   height:100%;
+  overflow:hidden;
   /*background:#5491A4;*/
   margin-top:45px;
 }
@@ -116,8 +117,7 @@ textarea {
   }
 .report-content {
   overflow-y:hidden;
-  min-height:11.5em;
-  max-height:11.5em;
+  height: 13.3333em;
   background:#fff;
   padding:1em;
   border: 1px solid #e7e7e7;
