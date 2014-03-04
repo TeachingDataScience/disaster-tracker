@@ -4,6 +4,12 @@
     z-index: 1001;
 }
 
+.credit {
+    margin-top: 0.777em;
+    color: #444;
+    text-align: center;
+}
+
 rect {
     fill: #FFF;
     stroke: #FFF;
