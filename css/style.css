@@ -27,9 +27,11 @@ h5 {
   }
 h6,label {
   font-size: 0.777em;
-  line-height: 1em;
   color: #777;
 	}
+.hed {
+    line-height: 1.777em;
+}
 p {
   font-size:0.8em;
 }
@@ -193,4 +195,7 @@ ul.pagination li.current a {
 .data-source:before {
   content: "Source: ";
   padding-left:1.2em;
+}
+.graph, .tweet {
+    margin-top: 4em;
 }
