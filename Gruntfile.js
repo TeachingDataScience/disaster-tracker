@@ -10,15 +10,21 @@ module.exports = function(grunt) {
                 },
                 banner: '/* <%= pkg.name %> */\n'
             },
-            files: {
-                'build/js/<%= pkg.name %>.js' : ['dev/js/init.js', 'dev/js/events.js', 'dev/js/models.js', 'dev/js/collections.js', 'dev/js/views.js', 'dev/js/graph-view.js', 'dev/js/app.js']
+
+            my_target: {
+                files: {
+                    'build/js/foundation.min.js' : ['lib/js/fastclick.js', 'lib/js/foundation.min.js', 'lib/js/foundation.magellan.js', 'lib/js/foundation-datepicker.js'],
+                    'build/js/<%= pkg.name %>.js' : ['dev/js/init.js', 'dev/js/events.js', 'dev/js/models.js', 'dev/js/collections.js', 'dev/js/views.js', 'dev/js/graph-view.js', 'dev/js/app.js'],
+                    'build/js/lib.min.js' : ['lib/js/underscore-1.5.2.js', 'lib/js/backbone-1.1.0.js', 'lib/js/mapbox.js', 'lib/js/leaflet.markercluster.js', 'lib/js/d3.v3.min.js']
+                }
             }
         },
 
         cssmin: {
             combine: {
                 files: {
-                    'build/css/<%= pkg.name %>.min.css' : ['dev/css/markercluster.css', 'dev/css/style.css', 'dev/css/graph.css']
+                    'build/css/<%= pkg.name %>.min.css' : ['dev/css/markercluster.css', 'dev/css/style.css', 'dev/css/graph.css'],
+                    'build/css/lib.min.css' : ['lib/css/foundation.css', 'lib/css/foundation-datepicker.css', 'lib/css/font-awesome.css']
                 }
             }
         }
