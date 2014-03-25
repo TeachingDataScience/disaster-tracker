@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
         uglify: {
             options: {
                 mangle: false,
@@ -27,12 +28,30 @@ module.exports = function(grunt) {
                     'build/css/lib.min.css' : ['lib/css/foundation.css', 'lib/css/foundation-datepicker.css', 'lib/css/font-awesome.css']
                 }
             }
-        }
+        },
 
+        watch: {
+            scripts: {
+                files: ['dev/js/*.js'],
+                tasks: ['newer:uglify'],
+                options: {
+                    debounceDelay: 250
+                }
+            },
+            styles: {
+                files: ['dev/css/*.css'],
+                tasks: ['newer:cssmin'],
+                options: {
+                    debounceDelay: 250
+                }
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-newer');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['uglify', 'cssmin']);
+    grunt.registerTask('default', ['newer:uglify', 'newer:cssmin']);
 }
