@@ -151,6 +151,11 @@ textarea {
     border: 1px solid #e7e7e7;
 }
 
+.report-body {
+    height: 8em;
+    overflow: hidden;
+}
+
 .readmore {
     position:absolute;
     left:inherit;
