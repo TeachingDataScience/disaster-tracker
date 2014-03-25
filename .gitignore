@@ -2,3 +2,4 @@
 _site/
 .*
 design
+node_modules
