@@ -5,11 +5,11 @@ Relief Web is an organization that tracks international disaster preparedness an
 
 This application's goal is to give an example of what developers can build with the Relief Web API, as well as create a re-usable disaster-specific app that can be rolled out quickly to track a natural disaster.
 
-*Accessing the Relief Web API*
+##Accessing the Relief Web API
 
 [Current API docs here](http://apidoc.rwlabs.org/)
 
-*How to run this application locally*
+##How to run this application locally
 
 This application uses [Foundation](http://foundation.zurb.com/) for responsive grid and base styling, and [Backbone.js](http://backbonejs.org) as a javascript framework. CSS and JS files are combined and minified for production using [Grunt](http://gruntjs.com/installing-grunt), which requires [Node.js](http://nodejs.org/) and [NPM](http://www.joyent.com/blog/installing-node-and-npm/).
 
