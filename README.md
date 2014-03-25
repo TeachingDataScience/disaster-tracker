@@ -22,6 +22,6 @@ To download and set up this site on your local hard drive:
 
 You should now be able to run a web server and see this site from a modern browser.
 
-***How to contribute***
+##How to contribute
 
-Read more about [contributing to the development]() of this project.
+Read more about [contributing to the development](https://github.com/developmentseed/reliefweb-disaster-app/blob/master/CONTRIBUTING.md) of this project.
