@@ -1,7 +1,8 @@
 (function ($) {
 
     'use strict';
-    var GraphView = Backbone.View.extend({
+
+    app.HistoricalGraph = Backbone.View.extend({
 
         el: '#historical-chart',
 
@@ -109,7 +110,5 @@
                 .call(yAx);
         }
     });
-
-    app.historicalGraph = new GraphView();
 
 })(jQuery);

@@ -135,29 +135,33 @@
     <div id="templates">
 
         <script type="text/template" id="report-template">
-            <div class='report-top'>
-                <h6 class="source"><%- source[0].name %></h6>
-                <h6 class="dateline"><%- dateline %></h6>
-            </div>
-            <div class='report-content'>
-                <div class='report-body'>
-                    <h6 class="hed"><%- title %></h6>
-                    <p class="toggle"><%= lead %></p>
+            <div class="report medium-6 column">
+                <div class='report-top'>
+                    <h6 class="source"><%- source[0].name %></h6>
+                    <h6 class="dateline"><%- dateline %></h6>
                 </div>
-                <small class='readmore'>
-                    <a target="_blank" href="<%- url %>">Read on reliefweb</a> |
-                    <a target="_blank" href="<%- origin %>">Read original article</a>
-                </small>
+                <div class='report-content'>
+                    <div class='report-body'>
+                        <h6 class="hed"><%- title %></h6>
+                        <p class="toggle"><%= lead %></p>
+                    </div>
+                    <small class='readmore'>
+                        <a target="_blank" href="<%- url %>">Read on reliefweb</a> |
+                        <a target="_blank" href="<%- origin %>">Read original article</a>
+                    </small>
+                </div>
             </div>
         </script>
 
         <script type="text/template" id="tweet-template">
-            <a target="_blank" href="http://twitter.com/<%- user %>/status/<%- id_str %>">
-                <div class='report-content'>
-                    <h5 class='dateline'><img src='<%- user_image %>'/><%- user %></h5>
-                    <p><%- text %></p>
-                </div>
-            </a>
+            <div class="report medium-4 column">
+                <a target="_blank" href="http://twitter.com/<%- user %>/status/<%- id_str %>">
+                    <div class='report-content'>
+                        <h5 class='dateline'><img src='<%- user_image %>'/><%- user %></h5>
+                        <p><%- text %></p>
+                    </div>
+                </a>
+            </div>
         </script>
 
         <script type="text/template" id="pagination-template">
@@ -186,23 +190,17 @@
                     <td>Urban Population</td>
                     <td class='demo-num'><%- _2012_urban_population %>M</td>
                 </tr>
+                <tr>
+                    <td>Life Expectancy at Birth</td>
+                    <td class='demo-num'><%- _2012_life_expectancy_at_birth%></td>
+                </tr>
             </table>
         </script>
 
-        <script type="text/template" id="demo0-template">
-            <td>Life Expectancy at Birth</td>
-            <td class='demo-num'><%- _2012_life_expectancy_at_birth%></td>
-        </script>
 
     </div>
     <script type="text/javascript" src="lib/jquery/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="build/js/foundation.min.js"></script>
-
-    <script>
-        $(document).foundation();
-        $('.sub-nav dd').first().next().addClass('active');
-    </script>
-
     <script type="text/javascript" src="build/js/lib.min.js"></script>
     <script type="text/javascript" src="build/js/relief-web-disaster-tracker.js"></script>
 </BODY>

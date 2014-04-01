@@ -10,59 +10,28 @@
         return parsed.join('-');
     }
 
-    app.MainStoryView = Backbone.View.extend({
-        el: '#main-story',
-        initialize: function() {
-            app.events.on('map:loaded', this.show, this);
-        },
-        show: function() {
-            this.$el.addClass('slide-in');
-        }
-    });
-
     app.MapView = Backbone.View.extend({
         el: '#app-map',
         template: _.template($('#marker-template').html()),
 
-        events: {},
-
         initialize: function() {
+            // create markers to place on the map
             this.listenTo(app.markers, 'reset', this.addMarker);
+            app.markers.fetch({ reset: true });
 
-            app.markers.fetch({
-                reset: true
+            // initialize the map
+            this.map = L.mapbox.map('app-map', 'jue.hb9ikea3', {
+                minZoom: 3,
+                maxZoom: 8,
+                scrollWheelZoom: false
             });
-
-            this.map = L.mapbox.map('app-map', 'jue.hb9ikea3',{
-                minZoom:3,
-                maxZoom:8,
-                scrollWheelZoom:false
-            });
-
-            var onload = $.proxy(this.onload, this);
-
-            window.setTimeout(onload, 800);
-        },
-
-        onload: function() {
-            // this.show();
-            app.events.trigger('map:loaded');
-        },
-
-        show: function() {
-            this.$el.addClass('show');
-        },
-
-        fade: function() {
-            this.$el.removeClass('show');
         },
 
         addMarker: function(){
-            var view = this;
+            var view = this,
+                featureCollection = app.markers.toJSON();
 
-            var featureCollection = app.markers.toJSON();
-
-            _.each(featureCollection,function(f){
+            _.each(featureCollection, function(f){
                 f.properties['marker-size'] = 'small';
                 f.properties['marker-color'] = '#E68080';
                 f.properties.popup = view.template(f);
@@ -84,94 +53,67 @@
                 }
             }).addTo(this.map);
         }
+
     });
 
-    app.AppView = Backbone.View.extend({
 
-        el: '#disaster-app',
-        initialize: function () {
+    app.ReportView = Backbone.View.extend({
+        el: '#report-list',
+        tagName: 'div',
+        template: _.template($('#report-template').html()),
 
-            this.$reports = this.$('#report-list');
-            this.$tweets = this.$('#tweet-list');
-            this.$demo = this.$('#demographic-chart');
-
+        initialize: function() {
             this.listenTo(app.stories, 'reset', this.addReports);
+            // is it necessary to do both resets and reflows?
             this.listenTo(app.stories, 'reflow', this.addReports);
-            this.listenTo(app.tweets, 'reset', this.addTweets);
-            this.listenTo(app.demographics, 'reset', this.addAllDemo);
-            this.listenTo(app.demographics0, 'reset', this.addAllDemo);
-
-            app.events.trigger('app:start');
-
-            app.tweets.fetch({
-                reset: true
-            });
-
-            var query = {
-                value: 'haiyan',
-                fields: {
-                    0: 'title'
-                },
-                operator: 'OR'
-            }
-
-            this.country = 'PHL';
-
-            app.demographics.fetch({
-                reset:true
-            });
-
-            app.demographics0.fetch({
-                reset:true
-            });
         },
 
         addReports: function() {
-            this.$reports.empty();
-            _.each(app.stories.getPage(), this.addStory, this);
-        },
+            var template = this.template;
+            this.$el.empty().html(_.map(app.stories.getPage(), function(model) {
+                return template(model.toJSON());
+            }).join(''));
+        }
+    });
 
-        addStory: function(story, index) {
-            var disaster = story.attributes.disaster;
 
-            var reportView = new app.ReportView({ model: story });
-            this.$reports.append(reportView.render().el).fadeIn(200);
+    app.TweetView = Backbone.View.extend({
+        el: '#tweet-list',
+        tagName: 'div',
+        template: _.template($('#tweet-template').html()),
+
+        initialize: function() {
+            this.listenTo(app.tweets, 'reset', this.addTweets);
+            app.tweets.fetch({ reset: true });
         },
 
         addTweets: function() {
-            _.each(app.tweets.models, this.addTweet, this);
-        },
-
-        addTweet: function(tweet, index) {
-            var tweetView = new app.TweetView({model: tweet});
-            this.$tweets.append(tweetView.render().el);
-        },
-
-        addAllDemo: function(){
-            this.$demo.empty(); // clear out previous rendered view since this is run twice (being listened to by two collections)
-            var demoView, demoView0;
-
-            app.demographics.each(this.addDemo, this);
-            app.demographics0.each(this.addDemo0, this);
-
-            if (app.demographics.length > 0){
-                demoView = new app.DemoView({model: this.demo});
-                this.$demo.append(demoView.render().el);
-            }
-            if (app.demographics0.length > 0){
-                demoView0 = new app.DemoView0({model: this.demo0});
-                this.$demo.find('table').append(demoView0.render().el);
-            }
-        },
-
-        addDemo: function(){
-            this.demo = app.demographics.findWhere({'country_code':this.country});
-        },
-        addDemo0: function(){
-            this.demo0 = app.demographics0.findWhere({'abbreviation':this.country});
+            var template = this.template;
+            this.$el.empty().html(_.map(app.tweets.models, function(model) {
+                return template(model.toJSON());
+            }).join(''));
         }
-
     });
+
+
+    app.DemographicTable = Backbone.View.extend({
+        el: '#demographic-chart',
+        tagName:'div',
+        template: _.template($('#demo-template').html()),
+
+        initialize: function() {
+            this.listenTo(app.demographics, 'reset', this.addDemographics);
+            app.demographics.fetch({ reset: true });
+        },
+
+        addDemographics: function(){
+            var template = this.template;
+            this.$el.empty().html(_.map(app.demographics.models, function(model) {
+                return template(model.toJSON());
+            }).join(''));
+        }
+    });
+
 
     app.ReportSearch = Backbone.View.extend({
         el: '#report-search',
@@ -388,7 +330,6 @@
 
         initialize: function() {
             this.$after = this.$('.prev');
-
             this.listenTo(app.stories, 'reset', this.render);
             this.listenTo(app.stories, 'reflow', this.reflow);
         },
@@ -446,45 +387,6 @@
         }
 
 
-    });
-
-    app.TweetView = Backbone.View.extend({
-        tagName: 'div',
-        template: _.template($('#tweet-template').html()),
-        render: function() {
-            this.$el.html(this.template(this.model.toJSON()));
-            this.$el.addClass('report medium-4 column')
-            return this
-        }
-    });
-
-    app.ReportView = Backbone.View.extend({
-        tagName: 'div',
-        template: _.template($('#report-template').html()),
-        render: function() {
-            this.$el.html(this.template(this.model.toJSON()));
-            this.$el.addClass('report medium-6 column');
-            return this;
-        }
-
-    });
-
-    app.DemoView = Backbone.View.extend({
-        tagName:'div',
-        template: _.template($('#demo-template').html()),
-        render: function() {
-            this.$el.html(this.template(this.model.toJSON()));
-            return this
-        }
-    });
-
-    app.DemoView0 = Backbone.View.extend({
-        tagName:'tr',
-        template: _.template($('#demo0-template').html()),
-        render: function() {
-            this.$el.html(this.template(this.model.toJSON()));
-            return this
-        }
     });
 
 })(jQuery);

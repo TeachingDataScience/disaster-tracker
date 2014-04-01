@@ -23,10 +23,7 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
                         resp.data.list || resp.data.info || {} :
                         {};
 
-            console.log(models);
-
             this.total = models.length;
-
             this.page = 0;
 
             return _.map(models, function(model) {
@@ -95,14 +92,23 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
     });
 
     var Tweets = Backbone.Collection.extend({
-        model: app.tweet,
         url: 'https://s3-us-west-2.amazonaws.com/reliefweb/tweets.json',
-        //url: '/data/tweets.json',
     });
 
     var Markers = Backbone.Collection.extend({
         url:'data/current.geojson'
     });
+
+    var Demographics = Backbone.Collection.extend({
+
+        // original source for population data
+        // url:'http://data.undp.org/resource/e6xu-b22v.json',
+
+        // original source for life expectancy data
+        // url:'http://data.undp.org/resource/wxub-qc5k.json',
+        url: 'data/phl-demographics.json'
+    });
+
 
     var Historical = Backbone.Collection.extend({
         url: 'data/ph-disasters-all.json',
@@ -126,20 +132,11 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
                 .value();
             return years;
         }
-    })
-
-    var Demographic = Backbone.Collection.extend({
-        url:'http://data.undp.org/resource/e6xu-b22v.json',
-    });
-
-    var Demographic0 = Backbone.Collection.extend({
-        url:'http://data.undp.org/resource/wxub-qc5k.json',
     });
 
     app.stories = new Stories();
     app.tweets = new Tweets();
     app.markers = new Markers();
+    app.demographics = new Demographics();
     app.historical = new Historical();
-    app.demographics = new Demographic();
-    app.demographics0 = new Demographic0();
 })();

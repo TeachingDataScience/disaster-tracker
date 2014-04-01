@@ -1,9 +1,23 @@
 $(function() {
     'use strict';
 
-    var views = ['MainStoryView', 'MapView', 'PaginatedView', 'ReportSearch', 'AppView' ];
+    $(document).foundation();
+    $('.sub-nav dd').first().next().addClass('active');
+
+    var views = [
+        'MapView',
+        'PaginatedView',
+        'ReportSearch',
+        'ReportView',
+        'TweetView',
+        'HistoricalGraph',
+        'DemographicTable'
+    ];
+
     _.each(views, function(view) {
         new app[view]();
     });
+
+    app.events.trigger('app:start');
 
 });
