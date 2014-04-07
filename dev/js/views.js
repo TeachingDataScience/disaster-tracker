@@ -235,14 +235,14 @@
                 dateEnd;
 
             // check to make sure there is a query, and it's not a repeat
-            // if no value, default to Haiyan
+            // if no value, set to default in config, defined in init.js
             target = this.$forms.query.val();
             if (target && target !== this.query.value) {
                 this.query.value = target;
             }
             else {
                 app.events.trigger('reports-search:error', this.$forms.query);
-                this.query.value = 'Haiyan';
+                this.query.value = app.config.apiSearch || '';
             }
 
             // verify there's a limit, if not set to 20
@@ -353,7 +353,7 @@
         },
 
         renderOne: function(index) {
-            return this.template({num: index, id: this.name.concat(index)});
+            return this.template({num: index + 1, id: this.name.concat(index)});
         },
 
         previous: function() {
@@ -370,7 +370,7 @@
             var target = event.currentTarget.id.slice(this.name.length);
 
             if (this.pageInfo.page !== target) {
-                app.stories.jump(event.currentTarget.id.slice(this.name.length));
+                app.stories.jump(parseInt(event.currentTarget.id.slice(this.name.length), 10));
             }
 
             return false;

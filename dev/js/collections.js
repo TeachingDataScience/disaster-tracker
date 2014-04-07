@@ -19,6 +19,8 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
         parse: function(resp) {
 
+            console.log(resp);
+
             var models = resp.data ?
                         resp.data.list || resp.data.info || {} :
                         {};
@@ -30,8 +32,8 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
                 var fields = model.fields,
 
                     // truncate the body to 300 characters
-                    html = fields['body-html'],
-                    lead = html ? html.trunc(105) : 'No description available',
+                    title = fields['title'],
+                    lead = title ? title.trunc(140) : 'No description available',
 
                     // get a date string
                     date = fields.date,
@@ -72,6 +74,8 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
             if (this.page < this.pageInfo().pages - 1) {
                 this.page = this.page + 1;
                 this.trigger('reflow');
+            console.log(this.pageInfo().pages);
+            console.log(this.page);
             }
             return false;
         },

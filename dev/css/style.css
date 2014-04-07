@@ -27,18 +27,20 @@ h3 span {
     font-style:italic;
 }
 
+h4 {
+    font-size: 1.025em;
+    line-height: 1.775em;
+}
+
 h5 {
     font-size: 1em;
 }
 
 h6,label {
     font-size: 0.777em;
-    color: #777;
+    color: #444;
 }
 
-.hed {
-    line-height: 1.777em;
-}
 
 p {
     font-size:0.8em;
@@ -49,8 +51,7 @@ form {
 }
 
 label{
-    color:#fff;
-    margin-bottom:0.666em;
+    color: #666;
 }
 
 input[type="text"],
@@ -139,20 +140,21 @@ textarea {
 }
 
 .report-top {
-    padding: 1em;
+    padding: 0.725em 1.425em 0.225em;
+    display: inline-block;
     background: #e7e7e7;
+    border-top-right-radius: 7px;
 }
 
 .report-content {
-    overflow-y:hidden;
-    height: 13.3333em;
-    background:#fff;
-    padding:1em;
+    background: #fff;
+    padding: 1em 1.425em;
     border: 1px solid #e7e7e7;
+    height: 10em;
+    overflow: hidden;
 }
 
 .report-body {
-    height: 8em;
     overflow: hidden;
 }
 
@@ -169,11 +171,11 @@ textarea {
 .tweet .report-top {
     color:#777;
 }
+
 .tweet .report-content {
     background:#f2f2f2;
     border:1px solid #ddd;
-    min-height:8em;
-    max-height:8em;
+    height: 9em;
 }
 
 .tweet .report:hover .report-content{
@@ -181,13 +183,12 @@ textarea {
 }
 
 .source {
-    font-style: italic;
-    color: #666;
-    margin: 0 0 0.6775em;
+    color: #222;
+    margin: 0 0 0.2775em;
 }
 
 .dateline {
-    font-weight: 200;
+    font-style: italic;
     color: #666;
 
 }
@@ -234,7 +235,6 @@ ul.pagination li.current a {
 
 .demographic table {
     width:100%;
-    height:8em;
 }
 
 .data-source:before {
@@ -245,3 +245,8 @@ ul.pagination li.current a {
 .graph, .tweet {
     margin-top: 4em;
 }
+
+.underline {
+    border-bottom: 1px solid #aaa;
+}
+

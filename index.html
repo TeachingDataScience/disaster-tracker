@@ -40,7 +40,7 @@
                 <div class="medium-12 column">
                     <div class="row collapse">
                         <div class="small-10 column">
-                            <input type="text" id="report-query-value" placeholder="eg. 'haiyan infrastructure damage'" />
+                            <input type="text" id="report-query-value" placeholder="Enter search terms" />
                         </div>
                         <div class="small-2 column">
                             <input type="submit" value="Search" class="button postfix" />
@@ -135,20 +135,15 @@
     <div id="templates">
 
         <script type="text/template" id="report-template">
-            <div class="report medium-6 column">
+            <div class="report small-6 column">
                 <div class='report-top'>
                     <h6 class="source"><%- source[0].name %></h6>
-                    <h6 class="dateline"><%- dateline %></h6>
                 </div>
                 <div class='report-content'>
                     <div class='report-body'>
-                        <h6 class="hed"><%- title %></h6>
-                        <p class="toggle"><%= lead %></p>
+                        <h6 class="dateline"><%- dateline %></h6>
+                        <h4><span class="underline"><%- format[0].name %></span>: <%- lead %></h4>
                     </div>
-                    <small class='readmore'>
-                        <a target="_blank" href="<%- url %>">Read on reliefweb</a> |
-                        <a target="_blank" href="<%- origin %>">Read original article</a>
-                    </small>
                 </div>
             </div>
         </script>
