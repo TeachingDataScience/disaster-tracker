@@ -32,7 +32,7 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
                     // truncate the body to 300 characters
                     title = fields.title,
-                    lead = title ? title.trunc(140) : 'No description available',
+                    lead = title ? title.trunc(90) : 'No description available',
 
                     // get a date string
                     date = fields.date,

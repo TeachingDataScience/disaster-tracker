@@ -92,10 +92,13 @@ textarea {
 /* map */
 .map,
 .reports {
+    margin-top:45px;
+}
+
+.map {
     height:100%;
     min-height: 730px;
     overflow:hidden;
-    margin-top:45px;
 }
 
 .about {
@@ -131,7 +134,7 @@ textarea {
 }
 
 .report {
-    padding: 0 1em 1em;;
+    padding: 0 1em 1em;
 }
 
 .report img {
@@ -255,5 +258,18 @@ ul.pagination li.current a {
 
 .underline {
     border-bottom: 1px solid #aaa;
+}
+
+@media only screen and (min-width: 40.063em) {
+    .reports {
+        height:100%;
+        min-height: 730px;
+        overflow:hidden;
+    }
+}
+
+@media only screen and (min-width: 64.063em) {
+    .report { height: 16em;
+    }
 }
 
