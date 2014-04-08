@@ -15,7 +15,7 @@ This application uses [Foundation](http://foundation.zurb.com/) for responsive g
 
 To download and set up this site on your local hard drive:
 
-1. git clone git@github.com:developmentseed/reliefweb-disaster-app.git
+1. git clone git@github.com:reliefweb/ebola-tracker.git
 2. cd reliefweb-disaster-app
 3. npm install
 4. grunt watch
@@ -24,4 +24,4 @@ You should now be able to run a web server and see this site from a modern brows
 
 ##How to contribute
 
-Read more about [contributing to the development](https://github.com/developmentseed/reliefweb-disaster-app/blob/master/CONTRIBUTING.md) of this project.
+Read more about [contributing to the development](https://github.com/reliefweb/ebola-tracker/blob/master/CONTRIBUTING.md) of this project.
