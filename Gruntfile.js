@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             combine: {
                 files: {
                     'build/css/<%= pkg.name %>.min.css' : ['dev/css/markercluster.css', 'dev/css/style.css', 'dev/css/graph.css'],
-                    'build/css/lib.min.css' : ['lib/css/foundation.css', 'lib/css/foundation-datepicker.css', 'lib/css/font-awesome.css']
+                    'build/css/lib.min.css' : ['lib/css/foundation.css', 'lib/css/foundation-datepicker.css'/*, 'lib/css/font-awesome.css'*/]
                 }
             }
         },
