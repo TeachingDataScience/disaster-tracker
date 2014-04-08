@@ -107,7 +107,7 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
         // original source for life expectancy data
         // url:'http://data.undp.org/resource/wxub-qc5k.json',
-        url: 'data/phl-demographics.json'
+        url: 'data/gin-demographics.json'
     });
 
 
