@@ -1,15 +1,15 @@
 [{
     "properties": {
-        "country": "Phillipines",
-        "title": "Typhoon Haiyan",
-        "youtube" : "4wrgrJwYdy8"
+        "country": "Guinea",
+        "title": "The 2014 Ebola outbreak",
+        "youtube" : "FeBBCISf3lY"
     },
     "type": "Feature",
     "geometry": {
         "type": "Point",
         "coordinates": [
-            123.4957455,
-            9.4410622
+            -10.899665,
+            10.512121
         ]
     }
 }]
