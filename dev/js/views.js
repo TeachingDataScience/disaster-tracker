@@ -186,7 +186,7 @@
             fields: {
                 0: 'title'
             },
-            operator: 'OR'
+            operator: 'AND'
         },
 
         filter: {
