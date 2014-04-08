@@ -19,7 +19,7 @@
         y           : d3.scale.linear(),
 
         set         : [],
-        start       : 1940,
+        start       : 1981,
         end         : 2014,
 
         max         : 0,
@@ -65,7 +65,7 @@
 
             var y = this.y,
                 x = this.x;
-
+                S
             var xAx = d3.svg.axis()
                 .scale(x)
                 .tickSize(0)
@@ -90,12 +90,12 @@
             var rect = layer.selectAll('rect')
                 .data(function(d) { return d })
               .enter().append('rect')
-                .attr('x', function(d) { return x(parseInt(d.attributes.year, 10)) })
+                .attr('x', function(d) { return x(parseInt(d.attributes.start, 10)) })
                 .attr('y', function(d) { return y(d.attributes.y0 + d.attributes.no_killed) })
                 .attr('width', x.rangeBand())
                 .attr('height', function(d) { return y(d.attributes.y0) - y(d.attributes.y0 + d.attributes.no_killed) })
                 .attr('class', function(d) {
-                    var cls = d.attributes.dis_type.split(' ');
+                    var cls = d.attributes.dis_group.split(' ');
                     return cls[0].toLowerCase();
                 });
 

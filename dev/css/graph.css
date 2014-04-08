@@ -36,10 +36,10 @@ text {
     left: -1.4em;
 }
 
-.storm {
+.industrial {
     fill: #5191A5;
 }
-.storm:before {
+.industrial:before {
     background-color: #5191A5;
 }
 
@@ -71,16 +71,17 @@ text {
     background-color: #4eff91;
 }
 
-.volcano {
+.transport {
+    fill: #ff9bd9;
+}
+.transport:before {
+    background-color: #ff9bd9;
+}
+
+.miscellaneous {
     fill: #cccccc;
 }
-.volcano:before {
+.miscellaneous:before {
     background-color: #cccccc;
 }
 
-.mass {
-    fill: #ff9bd9;
-}
-.mass:before {
-    background-color: #ff9bd9;
-}

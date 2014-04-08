@@ -131,7 +131,7 @@ textarea {
 }
 
 .report {
-    padding:0 1em 1em;
+    padding: 0 1em 1em;;
 }
 
 .report img {
@@ -148,14 +148,22 @@ textarea {
 
 .report-content {
     background: #fff;
-    padding: 1em 1.425em;
+    padding: 1em 1.425em 3em;
     border: 1px solid #e7e7e7;
-    height: 10em;
     overflow: hidden;
+    position: relative;
 }
 
 .report-body {
     overflow: hidden;
+}
+
+.report-under {
+    position: absolute;
+    height: 1em;
+    bottom: 1em;
+    right: 1em;
+    font-size: 0.825em;
 }
 
 .readmore {
@@ -194,9 +202,7 @@ textarea {
 }
 
 ul.pagination {
-    position: absolute;
-    top: 1em;
-    right: -3.5em;
+    margin-top: 14px;
 }
 
 ul.pagination li a:hover,
@@ -225,6 +231,7 @@ ul.pagination li.current a {
     top: -80px;
     width: 100%;
     opacity: 0;
+    display: none;
 }
 
 /* country profiles */

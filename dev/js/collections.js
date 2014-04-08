@@ -18,7 +18,6 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         },
 
         parse: function(resp) {
-
             console.log(resp);
 
             var models = resp.data ?
@@ -32,7 +31,7 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
                 var fields = model.fields,
 
                     // truncate the body to 300 characters
-                    title = fields['title'],
+                    title = fields.title,
                     lead = title ? title.trunc(140) : 'No description available',
 
                     // get a date string
@@ -74,8 +73,6 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
             if (this.page < this.pageInfo().pages - 1) {
                 this.page = this.page + 1;
                 this.trigger('reflow');
-            console.log(this.pageInfo().pages);
-            console.log(this.page);
             }
             return false;
         },
@@ -115,12 +112,12 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
 
     var Historical = Backbone.Collection.extend({
-        url: 'data/ph-disasters-all.json',
+        url: 'data/gin-disasters-all.json',
         entitles: [],
         parse: function(resp) {
 
             this.entities = _.chain(resp)
-                .groupBy(function(obj) { return obj.dis_type })
+                .groupBy(function(obj) { return obj.dis_group })
                 .keys().value();
 
             return resp;
@@ -128,10 +125,10 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
 
         yearsFrom: function(start) {
             var years = _.chain(this.models)
-                .groupBy(function(model) { return model.attributes.year })
+                .groupBy(function(model) { return model.attributes.start })
                 .toArray()
                 .filter(function(year) {
-                    return parseInt(year[0].attributes.year, 10) >= start
+                    return parseInt(year[0].attributes.start, 10) >= start
                 })
                 .value();
             return years;
