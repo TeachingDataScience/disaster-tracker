@@ -10,7 +10,7 @@ For those who would like to improve the prototype itself code- and organization-
 
 #### Better Search Queries and Filtering
 
-The Relief Web api has many options for searching and filtering through their reports. Although this application makes use of some of them, namely date start-/end-points and priority filtering, it is capable of more precise and powerful searches. See the [Relief Web API](http://apidoc.rwlabs.org/) docs for more information.
+The ReliefWeb api has many options for searching and filtering through their reports. Although this application makes use of some of them, namely date start-/end-points and priority filtering, it is capable of more precise and powerful searches. See the [ReliefWeb API](http://apidoc.rwlabs.org/) docs for more information.
 
 #### Better Demographic Information
 

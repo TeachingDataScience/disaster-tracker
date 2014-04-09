@@ -147,6 +147,7 @@ textarea {
     display: inline-block;
     background: #e7e7e7;
     border-top-right-radius: 7px;
+    min-height: 50px;
 }
 
 .report-content {
@@ -272,4 +273,3 @@ ul.pagination li.current a {
     .report { height: 16em;
     }
 }
-
