@@ -269,7 +269,6 @@ ul.pagination li.current a {
 }
 
 @media only screen and (min-width: 64.063em) {
-    .report { height: 16em;
-    }
+    #report-list > .report { height: 16em; }
 }
 
