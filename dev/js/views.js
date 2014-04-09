@@ -20,7 +20,7 @@
             app.markers.fetch({ reset: true });
 
             // initialize the map
-            this.map = L.mapbox.map('app-map', 'jue.hb9ikea3', {
+            this.map = L.mapbox.map('app-map', 'reliefweb.map-hoc0l4hc', {
                 minZoom: 3,
                 maxZoom: 8,
                 scrollWheelZoom: false
