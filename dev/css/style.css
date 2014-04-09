@@ -147,6 +147,7 @@ textarea {
     display: inline-block;
     background: #e7e7e7;
     border-top-right-radius: 7px;
+    min-height: 50px;
 }
 
 .report-content {
@@ -271,4 +272,3 @@ ul.pagination li.current a {
 @media only screen and (min-width: 64.063em) {
     #report-list > .report { height: 16em; }
 }
-
