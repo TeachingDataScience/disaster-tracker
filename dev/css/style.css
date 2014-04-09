@@ -110,10 +110,14 @@ textarea {
 }
 
 .logo-rw  {
-    margin-top:0.5em;
-    width:50%;
+    margin-top: 4px;
+    width: 60px;
+    float: right;
 }
 
+.sub-nav {
+    float: left;
+}
 
 /* reports */
 #expand-search {
