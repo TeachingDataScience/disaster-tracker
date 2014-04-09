@@ -18,8 +18,6 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         },
 
         parse: function(resp) {
-            console.log(resp);
-
             var models = resp.data ?
                         resp.data.list || resp.data.info || {} :
                         {};
@@ -115,7 +113,6 @@ String.prototype.trunc = String.prototype.trunc || function(n) {
         url: 'data/gin-disasters-all.json',
         entitles: [],
         parse: function(resp) {
-
             this.entities = _.chain(resp)
                 .groupBy(function(obj) { return obj.dis_group })
                 .keys().value();
