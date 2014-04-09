@@ -181,14 +181,6 @@
             }
         },
 
-        query: {
-            value: '',
-            fields: {
-                0: 'title'
-            },
-            operator: 'AND'
-        },
-
         filter: {
             operator: 'AND',
             conditions: {
@@ -219,6 +211,21 @@
                     },
                     operator: 'OR',
                     negate: true
+                },
+
+                3: {
+                    field: 'country.iso3',
+                    value: 'gin'
+                },
+
+                4: {
+                    field: 'language.code',
+                    value: 'en'
+                },
+
+                5: {
+                    field: 'disaster.glide',
+                    value: 'EP-2014-000041-GIN'
                 }
             }
         },
@@ -227,6 +234,13 @@
             0: 'date:desc'
         },
 
+        query: {
+            value: '',
+            fields: {
+                0: 'title'
+            },
+            operator: 'OR'
+        },
 
         updateQuery: function() {
 
@@ -241,8 +255,8 @@
                 this.query.value = target;
             }
             else {
-                app.events.trigger('reports-search:error', this.$forms.query);
-                this.query.value = app.config.apiSearch || '';
+                //app.events.trigger('reports-search:error', this.$forms.query);
+                this.query.value = '';
             }
 
             // verify there's a limit, if not set to 20
@@ -252,7 +266,7 @@
                 this.$forms.limit.val('');
             }
             else if (target <= 0 || target > 1000) {
-                app.events.trigger('reports-search:error', this.$forms.limit);
+                //app.events.trigger('reports-search:error', this.$forms.limit);
             }
             else {
                 this.params.limit = target;
@@ -266,7 +280,7 @@
             dateEnd = new Date(target[2], target[1], target[1]).getTime();
 
             if (dateEnd < dateStart) {
-                app.events.trigger('reports-search:error', this.$forms.dateEnd);
+                //app.events.trigger('reports-search:error', this.$forms.dateEnd);
             }
             else {
                 this.filter.conditions[1].value.from = dateStart;
