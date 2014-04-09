@@ -112,11 +112,22 @@ textarea {
 .logo-rw  {
     margin-top: 4px;
     width: 60px;
-    float: right;
 }
 
 .sub-nav {
     float: left;
+}
+
+.sub-nav dd a {
+    padding: 1.875rem 0.5rem;
+}
+
+.logos {
+    float: right;
+}
+
+.logos a {
+    margin-right: 0.4em;
 }
 
 /* reports */
