@@ -1,7 +1,7 @@
-ReliefWeb Disaster App
+ReliefWeb Disaster Tracker
 ======================
 
-ReliefWeb is an organization that tracks international disaster preparedness and response. This application combines ReliefWeb's new [REST API](http://labs.reliefweb.int/) with a custom-built [Twitter timeline-processing script](https://github.com/developmentseed/twitter-server) to give authoritative, real-time updates on an occuring disaster.
+ReliefWeb is an organization that tracks international disaster preparedness and response. This application combines ReliefWeb's new [REST API](http://labs.reliefweb.int/) with a custom-built [Twitter timeline-processing script](https://github.com/developmentseed/twitter-server) to give authoritative, real-time updates on an occurring disaster.
 
 This application's goal is to give an example of what developers can build with the ReliefWeb API, as well as create a re-usable disaster-specific app that can be rolled out quickly to track a natural disaster.
 
@@ -15,8 +15,8 @@ This application uses [Foundation](http://foundation.zurb.com/) for responsive g
 
 To download and set up this site on your local hard drive:
 
-1. git clone git@github.com:reliefweb/ebola-tracker.git
-2. cd reliefweb-disaster-app
+1. git clone git@github.com:reliefweb/disaster-tracker.git
+2. cd disaster-tracker
 3. npm install
 4. grunt watch
 
