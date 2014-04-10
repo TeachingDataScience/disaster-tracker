@@ -280,6 +280,10 @@ ul.pagination li.current a {
     border-bottom: 1px solid #aaa;
 }
 
+.underline a {
+    color: #333;
+}
+
 @media only screen and (min-width: 40.063em) {
     .reports {
         height:100%;
