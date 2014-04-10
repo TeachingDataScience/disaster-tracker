@@ -1,13 +1,13 @@
 ReliefWeb Disaster Tracker
 ======================
 
-ReliefWeb is an organization that tracks international disaster preparedness and response. This application combines ReliefWeb's new [REST API](http://labs.reliefweb.int/) with a custom-built [Twitter timeline-processing script](https://github.com/developmentseed/twitter-server) to give authoritative, real-time updates on an occurring disaster.
+ReliefWeb is a leading source authoritative and vetted information about disasters and humanitarian crises. This application combines ReliefWeb's new [REST API](http://labs.reliefweb.int/) with a custom-built [Twitter timeline-processing script](https://github.com/developmentseed/twitter-server) to give authoritative, real-time updates on an occurring disaster.
 
-This application's goal is to give an example of what developers can build with the ReliefWeb API, as well as create a re-usable disaster-specific app that can be rolled out quickly to track a natural disaster.
+Use the application as is, or join in the development of the application. This is an open source project that can be rolled out quickly to track information during a disaster. 
 
 ##Accessing the ReliefWeb API
 
-[Current API docs here](http://apidoc.rwlabs.org/)
+[Current API docs here](http://reliefweb.int/help/api)
 
 ##How to run this application locally
 
