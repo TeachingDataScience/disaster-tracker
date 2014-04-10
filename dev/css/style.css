@@ -173,6 +173,10 @@ textarea {
     position: relative;
 }
 
+.reports .report-content {
+    min-height:188px;
+}
+
 .report-body {
     overflow: hidden;
 }
