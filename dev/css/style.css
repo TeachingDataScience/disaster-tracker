@@ -97,7 +97,7 @@ textarea {
 
 .map {
     height:100%;
-    min-height: 730px;
+    min-height: 600px;
     overflow:hidden;
 }
 
@@ -279,7 +279,7 @@ ul.pagination li.current a {
 @media only screen and (min-width: 40.063em) {
     .reports {
         height:100%;
-        min-height: 730px;
+        min-height: 600px;
         overflow:hidden;
     }
 }
