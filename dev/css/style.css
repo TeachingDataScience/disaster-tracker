@@ -295,3 +295,11 @@ ul.pagination li.current a {
 @media only screen and (min-width: 64.063em) {
     #report-list > .report { height: 16em; }
 }
+
+/* Footer */
+
+.footer {
+    float: right;
+    margin-right: 31px;
+    margin-left: 31px;
+}
