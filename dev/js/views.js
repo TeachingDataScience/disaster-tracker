@@ -7,6 +7,7 @@
             parsed = [date.getMonth() + 1, date.getDate(), date.getFullYear()];
 
         parsed[0] = parsed[0] < 10 ? '0'.concat(parsed[0]) : parsed[0];
+        parsed[1] = parsed[1] < 10 ? '0'.concat(parsed[1]) : parsed[1];
         return parsed.join('-');
     }
 
@@ -274,10 +275,10 @@
 
             // is start date later than end date?
             target = this.$forms.dateStart.val().split('-');
-            dateStart = new Date(target[2], target[1], target[1]).getTime();
+            dateStart = new Date(target[2], target[0], target[1]).getTime();
 
             target = this.$forms.dateEnd.val().split('-');
-            dateEnd = new Date(target[2], target[1], target[1]).getTime();
+            dateEnd = new Date(target[2], target[0], target[1]).getTime();
 
             if (dateEnd < dateStart) {
                 //app.events.trigger('reports-search:error', this.$forms.dateEnd);
